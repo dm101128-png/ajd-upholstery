@@ -13,8 +13,8 @@ export default function Home() {
     <main>
       <nav className="nav" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="AJD Upholstery home">
-          <span className="brandMark">AJD</span>
-          <span className="brandWords">Upholstery</span>
+          <span className="logoCrop logoCropSmall"><img src="/ajd-logo-source.jpg" alt="" /></span>
+          <span className="brandWords">Custom AJD Upholstery</span>
         </a>
         <div className="navLinks">
           <a href="#services">Services</a>
@@ -28,6 +28,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroCopy">
+          <div className="heroLogo"><img src="/ajd-logo-source.jpg" alt="Custom AJD Upholstery" /></div>
           <p className="eyebrow"><span /> Furniture, renewed by hand</p>
           <h1>Made comfortable.<br /><em>Made yours.</em></h1>
           <p className="heroIntro">
@@ -95,7 +96,7 @@ export default function Home() {
         <a className="email" href={`mailto:${email}`}>{email}</a>
       </section>
 
-      <footer><a className="brand footerBrand" href="#top"><span className="brandMark">AJD</span><span className="brandWords">Upholstery</span></a><p>Furniture renewed with patience, skill, and care.</p><a href="#top">Back to top ↑</a><small>© {new Date().getFullYear()} AJD Upholstery</small></footer>
+      <footer><a className="brand footerBrand" href="#top"><span className="logoCrop logoCropSmall"><img src="/ajd-logo-source.jpg" alt="" /></span><span className="brandWords">Custom AJD Upholstery</span></a><p>Furniture renewed with patience, skill, and care.</p><a href="#top">Back to top ↑</a><small>© {new Date().getFullYear()} AJD Upholstery</small></footer>
     </main>
   );
 }
