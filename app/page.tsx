@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <nav className="nav" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="AJD Upholstery home">
-          <span className="logoCrop logoCropSmall"><img src="/ajd-logo-source.jpg" alt="" /></span>
+          <span className="logoCrop logoCropSmall"><img src="/ajd-logo.jpg" alt="" /></span>
           <span className="brandWords">Custom AJD Upholstery</span>
         </a>
         <div className="navLinks">
@@ -28,7 +28,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroCopy">
-          <div className="heroLogo"><img src="/ajd-logo-source.jpg" alt="Custom AJD Upholstery" /></div>
+          <div className="heroLogo"><img src="/ajd-logo.jpg" alt="Custom AJD Upholstery" /></div>
           <p className="eyebrow"><span /> Auto interiors, stitched right</p>
           <h1>Restitched<br /><em>Built to last.</em></h1>
           <p className="heroIntro">
@@ -84,8 +84,8 @@ export default function Home() {
           <p>Every vehicle arrives with a past. Our job is to give the interior a future — one seam, one panel, and one carefully chosen detail at a time.</p>
         </div>
         <div className="projectGrid">
-          <article className="project projectOne"><div className="chairShape"><i /><b /></div><div className="projectMeta"><span>Bucket seats</span><small>Reupholstery · Repair</small></div></article>
-          <article className="project projectTwo"><div className="benchShape"><i /><i /><i /></div><div className="projectMeta"><span>Bench seats</span><small>Foam · Stitching</small></div></article>
+          <article className="project projectOne"><img className="projectPhoto" src="/work-interior.png" alt="Custom two-tone leather bucket seats and dash trim" /><div className="projectMeta"><span>Bucket seats</span><small>Two-tone leather · Suede</small></div></article>
+          <article className="project projectTwo"><img className="projectPhoto" src="/work-door-panel.png" alt="Custom stitched leather door panel" /><div className="projectMeta"><span>Door panels</span><small>Contrast stitching</small></div></article>
           <article className="project projectThree"><div className="patternCard"><span>AJD</span></div><div className="projectMeta"><span>Fine details</span><small>Stitching · Embroidery</small></div></article>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function Home() {
         <a className="email" href={`mailto:${email}`}>{email}</a>
       </section>
 
-      <footer><a className="brand footerBrand" href="#top"><span className="logoCrop logoCropSmall"><img src="/ajd-logo-source.jpg" alt="" /></span><span className="brandWords">Custom AJD Upholstery</span></a><p>Automotive upholstery renewed with patience, skill, and care.</p><a href="#top">Back to top ↑</a><small>© {new Date().getFullYear()} AJD Upholstery</small></footer>
+      <footer><a className="brand footerBrand" href="#top"><span className="logoCrop logoCropSmall"><img src="/ajd-logo.jpg" alt="" /></span><span className="brandWords">Custom AJD Upholstery</span></a><p>Automotive upholstery renewed with patience, skill, and care.</p><a href="#top">Back to top ↑</a><small>© {new Date().getFullYear()} AJD Upholstery</small></footer>
     </main>
   );
 }

@@ -14,8 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase,
     title,
     description,
-    openGraph: { title, description, type: "website", images: [{ url: "/ajd-logo-source.jpg", width: 592, height: 1056, alt: "Custom AJD Upholstery logo" }] },
-    twitter: { card: "summary_large_image", title, description, images: ["/ajd-logo-source.jpg"] },
+    openGraph: { title, description, type: "website", images: [{ url: "/ajd-logo.jpg", width: 1254, height: 1254, alt: "Custom AJD Upholstery logo" }] },
+    twitter: { card: "summary_large_image", title, description, images: ["/ajd-logo.jpg"] },
   };
 }
 
