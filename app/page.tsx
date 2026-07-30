@@ -42,12 +42,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="heroVisual" aria-label="A close-up of hand-stitched automotive leather">
+        <div className="heroVisual" aria-label="AJD Upholstery workshop">
           <div className="fabricPanel">
-            <div className="stitchX" aria-hidden="true" />
-            <div className="tuft t1" /><div className="tuft t2" /><div className="tuft t3" />
-            <div className="tuft t4" /><div className="tuft t5" /><div className="tuft t6" />
-            <div className="fabricLabel"><span>01</span> Stitched, not glued</div>
+            <img className="fabricPhoto" src="/shop-bench-work.png" alt="AJD Upholstery hand-stitching a seat in the shop" />
+            <div className="fabricLabel"><span>01</span> In the shop</div>
           </div>
           <div className="years"><strong>10+</strong><span>years of<br />experience</span></div>
         </div>
@@ -68,7 +66,7 @@ export default function Home() {
       </section>
 
       <section className="story" id="story">
-        <div className="storyTexture"><div className="needle">✦</div><p>Measured twice.<br />Stitched with care.</p></div>
+        <div className="storyTexture"><img className="storyPhoto" src="/shop-supply-cabinet.png" alt="Wall of dyes, adhesives, and finishing supplies in the AJD Upholstery shop" /><p>Measured twice.<br />Stitched with care.</p></div>
         <div className="storyCopy">
           <p className="eyebrow light"><span /> A family craft</p>
           <h2>Patience is part<br />of the <em>process.</em></h2>
@@ -86,7 +84,8 @@ export default function Home() {
         <div className="projectGrid">
           <article className="project projectOne"><img className="projectPhoto" src="/work-interior.png" alt="Custom two-tone leather bucket seats and dash trim" /><div className="projectMeta"><span>Bucket seats</span><small>Two-tone leather · Suede</small></div></article>
           <article className="project projectTwo"><img className="projectPhoto" src="/work-door-panel.png" alt="Custom stitched leather door panel" /><div className="projectMeta"><span>Door panels</span><small>Contrast stitching</small></div></article>
-          <article className="project projectThree"><div className="patternCard"><span>AJD</span></div><div className="projectMeta"><span>Fine details</span><small>Stitching · Embroidery</small></div></article>
+          <article className="project projectThree"><img className="projectPhoto" src="/work-vw-restoration.png" alt="Classic Volkswagen Beetle interior restoration" /><div className="projectMeta"><span>Classic restorations</span><small>Full interior rebuild</small></div></article>
+          <article className="project projectFour"><img className="projectPhoto" src="/shop-fabric-wall.png" alt="Wall of leather and vinyl rolls in the AJD Upholstery shop" /><div className="projectMeta"><span>Material selection</span><small>Leather · Vinyl · Suede</small></div></article>
         </div>
       </section>
 
