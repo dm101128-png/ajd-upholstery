@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AJD Upholstery | Renewed by Hand",
+  title: "AJD Upholstery | Stitched by Hand",
   description:
-    "Thoughtful furniture upholstery and restoration, backed by more than a decade of hands-on experience.",
+    "Custom automotive upholstery, seat repair, and interior restoration, backed by more than a decade of hands-on experience.",
 };
 
 const email = "ajd.david.upholstery@gmail.com";
@@ -13,7 +13,7 @@ export default function Home() {
     <main>
       <nav className="nav" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="AJD Upholstery home">
-          <span className="logoCrop logoCropSmall"><img src="/ajd-logo-source.jpg" alt="" /></span>
+          <span className="logoCrop logoCropSmall"><img src="/ajd-logo.jpg" alt="" /></span>
           <span className="brandWords">Custom AJD Upholstery</span>
         </a>
         <div className="navLinks">
@@ -28,12 +28,13 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="heroCopy">
-          <div className="heroLogo"><img src="/ajd-logo-source.jpg" alt="Custom AJD Upholstery" /></div>
-          <p className="eyebrow"><span /> Furniture, renewed by hand</p>
-          <h1>Made comfortable.<br /><em>Made yours.</em></h1>
+          <div className="heroLogo"><img src="/ajd-logo.jpg" alt="Custom AJD Upholstery" /></div>
+          <p className="eyebrow"><span /> Auto interiors, stitched right</p>
+          <h1>Restitched<br /><em>Built to last.</em></h1>
           <p className="heroIntro">
-            We bring well-loved furniture back to life with careful hands,
-            honest materials, and over a decade of upholstery experience.
+            From bench seats to buckets, we bring tired interiors back to life
+            with hand-cut leather, honest stitching, and over a decade of
+            automotive upholstery experience.
           </p>
           <div className="heroActions">
             <a className="button primary" href={`mailto:${email}?subject=Tell%20us%20about%20your%20project`}>Start your project <span>↗</span></a>
@@ -41,11 +42,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="heroVisual" aria-label="A close-up inspired by hand-tufted upholstery">
+        <div className="heroVisual" aria-label="A close-up of hand-stitched automotive leather">
           <div className="fabricPanel">
+            <div className="stitchX" aria-hidden="true" />
             <div className="tuft t1" /><div className="tuft t2" /><div className="tuft t3" />
             <div className="tuft t4" /><div className="tuft t5" /><div className="tuft t6" />
-            <div className="fabricLabel"><span>01</span> Craft in every detail</div>
+            <div className="fabricLabel"><span>01</span> Stitched, not glued</div>
           </div>
           <div className="years"><strong>10+</strong><span>years of<br />experience</span></div>
         </div>
@@ -56,12 +58,12 @@ export default function Home() {
       <section className="services section" id="services">
         <div className="sectionIntro">
           <p className="eyebrow"><span /> What we do</p>
-          <h2>Old favorites.<br /><em>Fresh beginnings.</em></h2>
+          <h2>Worn seats.<br /><em>Fresh stitch.</em></h2>
         </div>
         <div className="serviceList">
-          <article><span className="number">01</span><div><h3>Furniture upholstery</h3><p>Sofas, chairs, benches, ottomans, and the pieces that make a room feel like home.</p></div><span className="arrow">↗</span></article>
-          <article><span className="number">02</span><div><h3>Repairs &amp; restoration</h3><p>Thoughtful repairs to frames, springs, padding, seams, and the details worth preserving.</p></div><span className="arrow">↗</span></article>
-          <article><span className="number">03</span><div><h3>Custom details</h3><p>Tufting, piping, cushions, fabric matching, and finishing touches made for your piece.</p></div><span className="arrow">↗</span></article>
+          <article><span className="number">01</span><div><h3>Seat upholstery</h3><p>Front seats, rear benches, buckets, and rows — reupholstered in leather, vinyl, or fabric to your spec.</p></div><span className="arrow">↗</span></article>
+          <article><span className="number">02</span><div><h3>Repairs &amp; restoration</h3><p>Torn seams, sagging foam, cracked dashboards, headliners, and door panels brought back to like-new shape.</p></div><span className="arrow">↗</span></article>
+          <article><span className="number">03</span><div><h3>Custom stitching &amp; details</h3><p>Two-tone leather, contrast stitching, embroidered logos, and console or steering wheel wraps.</p></div><span className="arrow">↗</span></article>
         </div>
       </section>
 
@@ -70,33 +72,33 @@ export default function Home() {
         <div className="storyCopy">
           <p className="eyebrow light"><span /> A family craft</p>
           <h2>Patience is part<br />of the <em>process.</em></h2>
-          <p>For more than ten years, upholstery has been more than a trade for our family. It is the satisfaction of solving a problem, shaping every corner, and watching a familiar piece become beautiful again.</p>
-          <p>Alongside Yelena, we bring a personal eye and steady attention to every project—because the best work is the work you are proud to put your name on.</p>
+          <p>For more than ten years, automotive upholstery has been more than a trade for our family. It is the satisfaction of solving a problem, cutting every panel true, and watching a tired interior come back to life.</p>
+          <p>Alongside Yelena, we bring a personal eye and a steady hand to every vehicle — because the best work is the work you are proud to put your name on.</p>
           <div className="signature">AJD <span>Upholstery</span></div>
         </div>
       </section>
 
       <section className="work section" id="work">
         <div className="workHeader">
-          <div><p className="eyebrow"><span /> Selected work</p><h2>Built for a<br /><em>second story.</em></h2></div>
-          <p>Every piece arrives with a past. Our job is to give it a future—one seam, spring, and carefully chosen detail at a time.</p>
+          <div><p className="eyebrow"><span /> Selected work</p><h2>Built for the<br /><em>long haul.</em></h2></div>
+          <p>Every vehicle arrives with a past. Our job is to give the interior a future — one seam, one panel, and one carefully chosen detail at a time.</p>
         </div>
         <div className="projectGrid">
-          <article className="project projectOne"><div className="chairShape"><i /><b /></div><div className="projectMeta"><span>Classic seating</span><small>Reupholstery · Repair</small></div></article>
-          <article className="project projectTwo"><div className="benchShape"><i /><i /><i /></div><div className="projectMeta"><span>Custom comfort</span><small>Cushions · Piping</small></div></article>
-          <article className="project projectThree"><div className="patternCard"><span>AJD</span></div><div className="projectMeta"><span>Fine details</span><small>Tufting · Finishing</small></div></article>
+          <article className="project projectOne"><img className="projectPhoto" src="/work-interior.png" alt="Custom two-tone leather bucket seats and dash trim" /><div className="projectMeta"><span>Bucket seats</span><small>Two-tone leather · Suede</small></div></article>
+          <article className="project projectTwo"><img className="projectPhoto" src="/work-door-panel.png" alt="Custom stitched leather door panel" /><div className="projectMeta"><span>Door panels</span><small>Contrast stitching</small></div></article>
+          <article className="project projectThree"><div className="patternCard"><span>AJD</span></div><div className="projectMeta"><span>Fine details</span><small>Stitching · Embroidery</small></div></article>
         </div>
       </section>
 
       <section className="contact">
-        <p className="eyebrow light"><span /> Your piece is next</p>
-        <h2>Let’s make something<br /><em>worth keeping.</em></h2>
-        <p>Send us a few photos and tell us what you have in mind. We’ll take it from there.</p>
+        <p className="eyebrow light"><span /> Your interior is next</p>
+        <h2>Let’s get it<br /><em>road ready.</em></h2>
+        <p>Send us a few photos of your seats or interior and tell us what you have in mind. We’ll take it from there.</p>
         <a className="button cream" href={`mailto:${email}?subject=AJD%20Upholstery%20project&body=Hi%20AJD%2C%0A%0AI%27d%20like%20an%20estimate%20for...`}>Email us for an estimate <span>↗</span></a>
         <a className="email" href={`mailto:${email}`}>{email}</a>
       </section>
 
-      <footer><a className="brand footerBrand" href="#top"><span className="logoCrop logoCropSmall"><img src="/ajd-logo-source.jpg" alt="" /></span><span className="brandWords">Custom AJD Upholstery</span></a><p>Furniture renewed with patience, skill, and care.</p><a href="#top">Back to top ↑</a><small>© {new Date().getFullYear()} AJD Upholstery</small></footer>
+      <footer><a className="brand footerBrand" href="#top"><span className="logoCrop logoCropSmall"><img src="/ajd-logo.jpg" alt="" /></span><span className="brandWords">Custom AJD Upholstery</span></a><p>Automotive upholstery renewed with patience, skill, and care.</p><a href="#top">Back to top ↑</a><small>© {new Date().getFullYear()} AJD Upholstery</small></footer>
     </main>
   );
 }

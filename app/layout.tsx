@@ -7,15 +7,15 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const metadataBase = new URL(`${protocol}://${host}`);
-  const title = "AJD Upholstery | Furniture Renewed by Hand";
-  const description = "Furniture upholstery, repair, and restoration with more than a decade of hands-on experience.";
+  const title = "AJD Upholstery | Custom Auto Upholstery, Stitched by Hand";
+  const description = "Custom automotive upholstery, seat repair, and interior restoration, stitched by hand with more than a decade of experience.";
 
   return {
     metadataBase,
     title,
     description,
-    openGraph: { title, description, type: "website", images: [{ url: "/ajd-logo-source.jpg", width: 592, height: 1056, alt: "Custom AJD Upholstery logo" }] },
-    twitter: { card: "summary_large_image", title, description, images: ["/ajd-logo-source.jpg"] },
+    openGraph: { title, description, type: "website", images: [{ url: "/ajd-logo.jpg", width: 1254, height: 1254, alt: "Custom AJD Upholstery logo" }] },
+    twitter: { card: "summary_large_image", title, description, images: ["/ajd-logo.jpg"] },
   };
 }
 
