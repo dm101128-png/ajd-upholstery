@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ajd-upholstery",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./worker/index.ts",
+  "assets": {
+    "directory": "dist/client",
+    "not_found_handling": "none",
+    "binding": "ASSETS"
+  },
+  "images": {
+    "binding": "IMAGES"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ajd-upholstery-quotes",
+      // PLACEHOLDER — replace with the real database_id returned by:
+      //   npx wrangler d1 create ajd-upholstery-quotes
+      // before deploying to production. See the PR description for the
+      // full list of one-time setup steps.
+      "database_id": "00000000-0000-4000-8000-000000000000"
+    }
+  ]
+}

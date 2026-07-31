@@ -77,8 +77,8 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 /* Our Story page */
 .storyBody{background:var(--paper);display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:start}
 .storyBodyText p{font:16px/1.75 Arial;color:var(--muted);margin:0 0 20px}
-.photoPlaceholder{background:var(--paper2);border:1px dashed #c9c7c1;border-radius:2px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
-.photoPlaceholder span{font:12px/1.5 Arial;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.photoPlaceholder{position:relative;background:#ece9e3;border-radius:2px;aspect-ratio:4/3;display:flex;align-items:flex-end}
+.photoPlaceholderLabel{font:11px/1.4 Arial;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:8px 10px}
 
 /* Our Work gallery */
 .gallerySection{background:var(--paper)}
@@ -115,6 +115,7 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .formGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .formGridThree{grid-template-columns:repeat(3,1fr)}
 .contactMethodRow{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.honeypotField{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .radioOption{display:flex;align-items:center;gap:8px;font:15px Arial;color:var(--text);text-transform:none;font-weight:400;letter-spacing:0}
 .formError{background:#fbeceb;border:1px solid #e4a6a2;color:#8a1f1a;padding:12px 16px;border-radius:3px;font:14px Arial}
 .formSuccess{background:#eaf5ee;border:1px solid #a9d6b8;color:#1e5b34;padding:20px;border-radius:3px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
@@ -128,7 +129,6 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .footerNav a:hover{color:var(--rust)}
 .footerContact{display:flex;flex-direction:column;gap:10px;font-size:14px}
 .footerContact a:hover{color:var(--rust)}
-.footerPlaceholder{color:#777;font-style:italic}
 .footerBottom{border-top:1px solid var(--lineDark);padding:20px 24px;text-align:center}
 .footerBottom small{font-size:11px;color:#777}
 

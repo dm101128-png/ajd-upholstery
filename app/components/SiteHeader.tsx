@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "../lib/business-info";
 
@@ -11,7 +12,7 @@ export default function SiteHeader() {
     <header className="siteHeader">
       <div className="siteHeaderBar">
         <Link className="brand" href="/" aria-label="AJD Upholstery home">
-          <img className="brandLogo" src="/ajd-logo.jpg" alt="AJD Upholstery" width={48} height={48} />
+          <Image className="brandLogo" src="/ajd-logo.jpg" alt="AJD Upholstery" width={48} height={48} priority />
           <span className="brandWords">AJD Upholstery</span>
         </Link>
 

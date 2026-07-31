@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <img className="heroBg" src="/shop-bench-work.png" alt="" />
+        <Image className="heroBg" src="/shop-bench-work.png" alt="" fill priority sizes="100vw" />
         <div className="heroOverlay" />
         <div className="heroContent">
           <h1>Built to Last.</h1>
@@ -59,15 +60,15 @@ export default function Home() {
         <p className="eyebrow">Selected work</p>
         <h2>Our Work</h2>
         <div className="previewGrid">
-          <img src="/work-interior.png" alt="Custom two-tone leather bucket seats and dash trim" />
-          <img src="/work-door-panel.png" alt="Custom stitched leather door panel" />
-          <img src="/work-vw-restoration.png" alt="Classic Volkswagen Beetle interior restoration" />
+          <Image src="/work-interior.png" alt="Custom two-tone leather bucket seats and dash trim" width={1448} height={1086} />
+          <Image src="/work-door-panel.png" alt="Custom stitched leather door panel" width={1448} height={1086} />
+          <Image src="/work-vw-restoration.png" alt="Classic Volkswagen Beetle interior restoration" width={1086} height={1448} />
         </div>
         <Link className="textLink" href="/our-work">View the full gallery <span>→</span></Link>
       </section>
 
       <section className="section storyPreview">
-        <img className="storyPreviewImg" src="/shop-supply-cabinet.png" alt="Materials and supplies inside the AJD Upholstery shop" />
+        <Image className="storyPreviewImg" src="/shop-supply-cabinet.png" alt="Materials and supplies inside the AJD Upholstery shop" width={1086} height={1448} />
         <div className="storyPreviewText">
           <p className="eyebrow">A family business</p>
           <h2>Built by hand, for more than 10 years</h2>
