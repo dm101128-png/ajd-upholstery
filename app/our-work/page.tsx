@@ -100,6 +100,13 @@ const categories: Category[] = [
         description:
           "Driver and passenger buckets rebuilt in two-tone leather with a suede insert and fresh dash trim to match.",
       },
+      {
+        src: "/work-chevy-truck-seats.png",
+        alt: "Close-up of diamond-stitched leather bucket seats in a classic Chevy truck",
+        title: "Diamond-Stitched Bucket Seats",
+        description:
+          "A close-up of the front buckets, diamond-stitched in leather with a matching center console and speaker grille.",
+      },
     ],
   },
 ];
