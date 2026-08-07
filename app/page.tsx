@@ -85,8 +85,11 @@ export default function Home() {
           <article className="project projectOne"><img className="projectPhoto" src="/work-interior.png" alt="Custom two-tone leather bucket seats and dash trim" /><div className="projectMeta"><span>Bucket seats</span><small>Two-tone leather · Suede</small></div></article>
           <article className="project projectTwo"><img className="projectPhoto" src="/work-door-panel.png" alt="Custom stitched leather door panel" /><div className="projectMeta"><span>Door panels</span><small>Contrast stitching</small></div></article>
           <article className="project projectThree"><img className="projectPhoto" src="/work-vw-restoration.png" alt="Classic Volkswagen Beetle interior restoration" /><div className="projectMeta"><span>Classic restorations</span><small>Full interior rebuild</small></div></article>
+          <article className="project projectFive"><img className="projectPhoto" src="/work-chevy-truck-console.png" alt="Diamond-stitched leather console and seats in a classic Chevy truck" /><div className="projectMeta"><span>Leather upgrades</span><small>Diamond stitch</small></div></article>
           <article className="project projectFour"><img className="projectPhoto" src="/shop-fabric-wall.png" alt="Wall of leather and vinyl rolls in the AJD Upholstery shop" /><div className="projectMeta"><span>Material selection</span><small>Leather · Vinyl · Suede</small></div></article>
+          <article className="project projectSix"><img className="projectPhoto" src="/work-chevy-truck-cabin.png" alt="Full cabin view of a restored classic Chevy truck interior" /><div className="projectMeta"><span>Classic restorations</span><small>Full cab rebuild</small></div></article>
         </div>
+        <a className="textLink galleryLink" href="/our-work">View the full gallery <span>↗</span></a>
       </section>
 
       <section className="contact">
