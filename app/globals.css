@@ -96,13 +96,42 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .lightboxClose{position:absolute;top:20px;right:24px;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
 
 /* Katzkin page */
-.katzkinExamples,.katzkinOptions,.katzkinBeforeAfter{background:var(--paper)}
-.katzkinExamples p,.katzkinOptions p,.katzkinBeforeAfter p{color:var(--muted);font:16px/1.7 Arial;max-width:640px}
+.katzkinHeroActions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:30px}
+.katzkinPresentationSection{background:#181818;color:#fff}
+.presentationHeading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:32px}
+.presentationHeading>div{margin:0}
+.presentationHeading p:not(.eyebrow){color:#c9c9cc;font:16px/1.65 Arial;margin:0;max-width:680px}
+.presentationActions{flex:none;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.presentationWebsiteLink{color:#fff;border-bottom:1px solid #666;padding:11px 0;font:700 12px/1.2 Arial;text-transform:uppercase;letter-spacing:.6px}
+.presentationWebsiteLink:hover{border-color:#fff}
+.presentationDownload{color:#fff;background:var(--rust);border:1px solid var(--rust);border-radius:3px;padding:12px 16px;font:900 12px/1.2 'Arial Black','Arial Bold',Arial,Helvetica,sans-serif;text-transform:uppercase;letter-spacing:.6px}
+.presentationDownload:hover{background:var(--rustDeep);border-color:var(--rustDeep)}
+.presentationViewer{max-width:1180px;margin:0 auto}
+.presentationStage{background:#070707;border:1px solid #383838;box-shadow:0 24px 60px rgba(0,0,0,.35);aspect-ratio:16/9;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.presentationSlide{width:100%;height:100%;object-fit:contain;background:#fff}
+.presentationToolbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding:22px 0 0}
+.presentationToolbar button{justify-self:start;border:1px solid #555;background:transparent;color:#fff;border-radius:3px;padding:12px 18px;font:900 12px/1 'Arial Black','Arial Bold',Arial,Helvetica,sans-serif;text-transform:uppercase;letter-spacing:.6px;cursor:pointer}
+.presentationToolbar button:last-child{justify-self:end}
+.presentationToolbar button:hover:not(:disabled){background:var(--rust);border-color:var(--rust)}
+.presentationToolbar button:disabled{opacity:.35;cursor:not-allowed}
+.presentationToolbar p{margin:0;color:#ccc;font:13px/1.3 Arial;text-transform:uppercase;letter-spacing:.5px}
+.presentationToolbar strong{color:#fff}
+.presentationHint{text-align:center;color:#888;font:12px/1.4 Arial;margin:12px 0 0}
+.katzkinBenefits,.katzkinConfidence{background:var(--paper)}
+.katzkinSectionIntro{color:var(--muted);font:17px/1.7 Arial;max-width:760px;margin-bottom:34px}
+.katzkinBenefitGrid,.katzkinConfidenceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.katzkinBenefitGrid article,.katzkinConfidenceGrid article{border-top:3px solid var(--rust);padding:24px 0 0}
+.katzkinBenefitGrid strong,.katzkinConfidenceGrid strong{display:block;font:900 20px/1.25 'Arial Black','Arial Bold',Arial,Helvetica,sans-serif;text-transform:uppercase;margin-bottom:12px}
+.katzkinBenefitGrid p,.katzkinConfidenceGrid p{color:var(--muted);font:15px/1.65 Arial;margin:0}
+.katzkinOptions{background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.katzkinOptionsCopy p:not(.eyebrow){color:#c9c9cc;font:16px/1.7 Arial;margin:0;max-width:560px}
+.katzkinOptionList{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--lineDark)}
+.katzkinOptionList span{font:700 14px/1.4 Arial;padding:18px 12px 18px 0;border-bottom:1px solid var(--lineDark);color:#eee}
 .katzkinProcess{background:var(--paper2)}
-.placeholderGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:24px}
 .processList{list-style:none;counter-reset:step;margin:0;padding:0;max-width:640px}
 .processList li{counter-increment:step;position:relative;padding:14px 0 14px 44px;border-top:1px solid var(--line);font:15px/1.6 Arial;color:var(--muted)}
 .processList li:before{content:counter(step);position:absolute;left:0;top:14px;color:var(--rust);font:900 15px Arial}
+.processList li strong{color:var(--text)}
 
 /* Quote page / form */
 .quoteSection{background:var(--paper)}
@@ -137,6 +166,10 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
   .storyPreview,.storyBody{grid-template-columns:1fr}
   .serviceGroups{grid-template-columns:1fr 1fr}
   .footerTop{grid-template-columns:1fr 1fr}
+  .katzkinBenefitGrid,.katzkinConfidenceGrid{grid-template-columns:1fr 1fr}
+  .katzkinOptions{grid-template-columns:1fr;gap:36px}
+  .presentationHeading{align-items:start;flex-direction:column;gap:20px}
+  .presentationActions{justify-content:flex-start}
 }
 @media(max-width:640px){
   .section{padding:56px 20px}
@@ -145,5 +178,14 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
   .formGrid,.formGridThree{grid-template-columns:1fr}
   .footerTop{grid-template-columns:1fr;text-align:left}
   .heroContent{padding:56px 20px 48px}
+  .katzkinBenefitGrid,.katzkinConfidenceGrid{grid-template-columns:1fr}
+  .katzkinOptionList{grid-template-columns:1fr}
+  .presentationToolbar{grid-template-columns:1fr 1fr;gap:12px;padding-top:16px}
+  .presentationToolbar p{grid-column:1/-1;grid-row:1;text-align:center}
+  .presentationToolbar button{grid-row:2;width:100%;padding:12px 10px}
+  .presentationHint{display:none}
+  .presentationActions{width:100%;align-items:stretch;flex-direction:column;gap:10px}
+  .presentationWebsiteLink,.presentationDownload{text-align:center;width:100%}
+  .presentationWebsiteLink{border:1px solid #666;border-radius:3px;padding:12px 14px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
