@@ -96,13 +96,22 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .lightboxClose{position:absolute;top:20px;right:24px;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
 
 /* Katzkin page */
-.katzkinExamples,.katzkinOptions,.katzkinBeforeAfter{background:var(--paper)}
-.katzkinExamples p,.katzkinOptions p,.katzkinBeforeAfter p{color:var(--muted);font:16px/1.7 Arial;max-width:640px}
+.katzkinHeroActions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:30px}
+.katzkinBenefits,.katzkinConfidence{background:var(--paper)}
+.katzkinSectionIntro{color:var(--muted);font:17px/1.7 Arial;max-width:760px;margin-bottom:34px}
+.katzkinBenefitGrid,.katzkinConfidenceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.katzkinBenefitGrid article,.katzkinConfidenceGrid article{border-top:3px solid var(--rust);padding:24px 0 0}
+.katzkinBenefitGrid strong,.katzkinConfidenceGrid strong{display:block;font:900 20px/1.25 'Arial Black','Arial Bold',Arial,Helvetica,sans-serif;text-transform:uppercase;margin-bottom:12px}
+.katzkinBenefitGrid p,.katzkinConfidenceGrid p{color:var(--muted);font:15px/1.65 Arial;margin:0}
+.katzkinOptions{background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.katzkinOptionsCopy p:not(.eyebrow){color:#c9c9cc;font:16px/1.7 Arial;margin:0;max-width:560px}
+.katzkinOptionList{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--lineDark)}
+.katzkinOptionList span{font:700 14px/1.4 Arial;padding:18px 12px 18px 0;border-bottom:1px solid var(--lineDark);color:#eee}
 .katzkinProcess{background:var(--paper2)}
-.placeholderGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:24px}
 .processList{list-style:none;counter-reset:step;margin:0;padding:0;max-width:640px}
 .processList li{counter-increment:step;position:relative;padding:14px 0 14px 44px;border-top:1px solid var(--line);font:15px/1.6 Arial;color:var(--muted)}
 .processList li:before{content:counter(step);position:absolute;left:0;top:14px;color:var(--rust);font:900 15px Arial}
+.processList li strong{color:var(--text)}
 
 /* Quote page / form */
 .quoteSection{background:var(--paper)}
@@ -137,6 +146,8 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
   .storyPreview,.storyBody{grid-template-columns:1fr}
   .serviceGroups{grid-template-columns:1fr 1fr}
   .footerTop{grid-template-columns:1fr 1fr}
+  .katzkinBenefitGrid,.katzkinConfidenceGrid{grid-template-columns:1fr 1fr}
+  .katzkinOptions{grid-template-columns:1fr;gap:36px}
 }
 @media(max-width:640px){
   .section{padding:56px 20px}
@@ -145,5 +156,7 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
   .formGrid,.formGridThree{grid-template-columns:1fr}
   .footerTop{grid-template-columns:1fr;text-align:left}
   .heroContent{padding:56px 20px 48px}
+  .katzkinBenefitGrid,.katzkinConfidenceGrid{grid-template-columns:1fr}
+  .katzkinOptionList{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -50,6 +50,11 @@ test("Katzkin is always spelled correctly", async () => {
   const { html } = await get(worker, "/katzkin");
   assert.doesNotMatch(html, /cat\s*skin/i);
   assert.match(html, /Katzkin/);
+  assert.match(html, /Real Upholstery\. Made to Fit\./i);
+  assert.match(html, /Vehicle-specific fit/i);
+  assert.match(html, /Professional installation/i);
+  assert.match(html, /Warranty-backed/i);
+  assert.doesNotMatch(html, /to be added/i);
 });
 
 test("the header navigation links to all six routes on every page", async () => {

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PhotoPlaceholder from "../components/PhotoPlaceholder";
 
 export const metadata: Metadata = {
   title: "Katzkin Leather Interiors | AJD Upholstery",
@@ -14,48 +13,84 @@ export default function KatzkinPage() {
         <p className="eyebrow">Certified installer</p>
         <h1>Katzkin Leather Interiors</h1>
         <p className="pageHeroIntro">
-          AJD Upholstery installs Katzkin automotive leather interiors, custom-fit to your
-          vehicle’s factory seats and trim.
+          Replace factory cloth or worn upholstery with genuine leather made for your
+          vehicle’s exact seat pattern and professionally installed by AJD Upholstery.
         </p>
+        <div className="katzkinHeroActions">
+          <Link className="button primary" href="/quote">Check Your Vehicle</Link>
+          <a className="textLink" href="#why-katzkin">Why Katzkin?</a>
+        </div>
       </section>
 
-      <section className="section katzkinExamples">
-        <h2>Vehicle-specific examples</h2>
-        <p>Examples of Katzkin installations for specific makes and models will be added here.</p>
-        <div className="placeholderGrid">
-          <PhotoPlaceholder label="Vehicle example — to be added" />
-          <PhotoPlaceholder label="Vehicle example — to be added" />
-          <PhotoPlaceholder label="Vehicle example — to be added" />
+      <section className="section katzkinBenefits" id="why-katzkin">
+        <p className="eyebrow">Why drivers choose Katzkin</p>
+        <h2>Real Upholstery. Made to Fit.</h2>
+        <p className="katzkinSectionIntro">
+          Katzkin is not a slip-on seat cover. The original seat upholstery is removed and
+          replaced with precision-cut leather created for your vehicle’s seat pattern.
+        </p>
+        <div className="katzkinBenefitGrid">
+          <article>
+            <strong>Vehicle-specific fit</strong>
+            <p>Patterns are tailored to thousands of vehicle configurations for a fitted, factory-style result.</p>
+          </article>
+          <article>
+            <strong>Professional installation</strong>
+            <p>The leather is installed over your factory seat structure—not pulled over the existing upholstery.</p>
+          </article>
+          <article>
+            <strong>Built around seat technology</strong>
+            <p>Installation accounts for compatible airbags, controls, and heated or ventilated seat components.</p>
+          </article>
         </div>
       </section>
 
       <section className="section katzkinOptions">
-        <h2>Colors, stitching &amp; customization</h2>
-        <p>
-          Katzkin offers a range of leather colors, stitching patterns, and perforation
-          options. Specific colors, patterns, and pricing for your vehicle will be added here.
-        </p>
-        <div className="placeholderGrid">
-          <PhotoPlaceholder label="Leather color/pattern — to be added" />
-          <PhotoPlaceholder label="Leather color/pattern — to be added" />
+        <div className="katzkinOptionsCopy">
+          <p className="eyebrow">Make it yours</p>
+          <h2>More Choice Than Factory Leather</h2>
+          <p>
+            Choose from available colors, two-tone combinations, contrast stitching,
+            perforation, and select embroidery options. We’ll review the choices that fit
+            your vehicle before anything is ordered.
+          </p>
+        </div>
+        <div className="katzkinOptionList" aria-label="Katzkin customization options">
+          <span>Leather colors</span>
+          <span>Two-tone layouts</span>
+          <span>Contrast stitching</span>
+          <span>Perforated inserts</span>
+          <span>Heating &amp; cooling options</span>
+          <span>Vehicle-specific designs</span>
         </div>
       </section>
 
-      <section className="section katzkinBeforeAfter">
-        <h2>Before &amp; after</h2>
-        <p>Before-and-after photos of completed Katzkin installations will be added here.</p>
-        <div className="placeholderGrid">
-          <PhotoPlaceholder label="Before / after — to be added" />
+      <section className="section katzkinConfidence">
+        <p className="eyebrow">What to expect</p>
+        <h2>A Straightforward Upgrade</h2>
+        <div className="katzkinConfidenceGrid">
+          <article>
+            <strong>Typical installation</strong>
+            <p>Many full-interior installations can be completed in about one working day once the kit arrives. Timing varies by vehicle and options.</p>
+          </article>
+          <article>
+            <strong>Warranty-backed</strong>
+            <p>Katzkin interiors include a limited warranty on materials and workmanship when installed through an authorized installer. We’ll explain the coverage for your order.</p>
+          </article>
+          <article>
+            <strong>Quoted for your vehicle</strong>
+            <p>Pricing depends on the vehicle, seating configuration, leather design, and selected upgrades. Your quote is confirmed before ordering.</p>
+          </article>
         </div>
       </section>
 
       <section className="section katzkinProcess">
         <h2>How it works</h2>
         <ol className="processList">
-          <li>We review your vehicle and go over Katzkin color and stitching options.</li>
-          <li>Your custom-fit Katzkin leather kit is ordered for your specific vehicle.</li>
-          <li>Our shop installs the leather onto your factory seats and trim.</li>
-          <li>You get your vehicle back with a new leather interior, built to fit.</li>
+          <li><strong>Tell us about your vehicle.</strong> Share the year, make, model, trim, and the options you want.</li>
+          <li><strong>Choose your design.</strong> We review compatible colors, stitching, perforation, and available upgrades.</li>
+          <li><strong>Approve the quote.</strong> Your vehicle-specific kit is ordered after the design and price are confirmed.</li>
+          <li><strong>We install it.</strong> The factory upholstery is removed and your new leather interior is fitted and finished.</li>
         </ol>
       </section>
 
