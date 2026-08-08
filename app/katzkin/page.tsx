@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import KatzkinPresentation from "../components/KatzkinPresentation";
 
 export const metadata: Metadata = {
   title: "Katzkin Leather Interiors | AJD Upholstery",
@@ -20,6 +21,32 @@ export default function KatzkinPage() {
           <Link className="button primary" href="/quote">Check Your Vehicle</Link>
           <a className="textLink" href="#why-katzkin">Why Katzkin?</a>
         </div>
+      </section>
+
+      <section className="section katzkinPresentationSection" aria-labelledby="katzkin-presentation-title">
+        <div className="presentationHeading">
+          <div>
+            <p className="eyebrow">Explore the presentation</p>
+            <h2 id="katzkin-presentation-title">Why Katzkin Makes Sense</h2>
+            <p>
+              Move through the complete Katzkin presentation one slide at a time. The original
+              slide design and content are preserved.
+            </p>
+          </div>
+          <div className="presentationActions">
+            <Link className="presentationWebsiteLink" href="/">
+              AJD Upholstery Website <span aria-hidden="true">↗</span>
+            </Link>
+            <a
+              className="presentationDownload"
+              href="/katzkin-presentation/Katzkin_B2B_Presentation.pptx"
+              download="Katzkin_B2B_Presentation.pptx"
+            >
+              Download Presentation <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+        <KatzkinPresentation />
       </section>
 
       <section className="section katzkinBenefits" id="why-katzkin">

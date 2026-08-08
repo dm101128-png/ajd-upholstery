@@ -54,6 +54,12 @@ test("Katzkin is always spelled correctly", async () => {
   assert.match(html, /Vehicle-specific fit/i);
   assert.match(html, /Professional installation/i);
   assert.match(html, /Warranty-backed/i);
+  assert.match(html, /Katzkin presentation viewer/i);
+  assert.match(html, /slide-01\.png/i);
+  assert.match(html, /Katzkin_B2B_Presentation\.pptx/i);
+  assert.match(html, /AJD Upholstery Website/i);
+  assert.match(html, /Download Presentation/i);
+  assert.match(html, /alt="Slide 1 of 10:/i);
   assert.doesNotMatch(html, /to be added/i);
 });
 
