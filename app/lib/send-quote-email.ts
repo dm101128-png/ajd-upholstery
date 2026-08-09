@@ -22,7 +22,11 @@ export async function sendQuoteEmail(env: Cloudflare.Env, payload: QuotePayload)
     return { sent: false, reason: "RESEND_API_KEY is not configured" };
   }
 
-  const to = env.QUOTE_NOTIFY_EMAIL || "ajd.david.upholstery@gmail.com";
+  const to = Array.from(new Set([
+    ...(env.QUOTE_NOTIFY_EMAIL || "").split(","),
+    "ajd.david.upholstery@gmail.com",
+    "ajd.upholstery@gmail.com",
+  ].map((email) => email.trim()).filter(Boolean)));
   const from = env.QUOTE_FROM_EMAIL || "AJD Upholstery Website <onboarding@resend.dev>";
 
   const vehicle = [payload.vehicleYear, payload.vehicleMake, payload.vehicleModel].filter(Boolean).join(" ");
@@ -46,7 +50,7 @@ export async function sendQuoteEmail(env: Cloudflare.Env, payload: QuotePayload)
       },
       body: JSON.stringify({
         from,
-        to: [to],
+        to,
         subject: `New quote request from ${payload.name}`,
         html,
         reply_to: payload.email || undefined,
