@@ -16,11 +16,7 @@
     {
       "binding": "DB",
       "database_name": "ajd-upholstery-quotes",
-      // PLACEHOLDER — replace with the real database_id returned by:
-      //   npx wrangler d1 create ajd-upholstery-quotes
-      // before deploying to production. See the PR description for the
-      // full list of one-time setup steps.
-      "database_id": "00000000-0000-4000-8000-000000000000"
+      "database_id": "deb66ffc-cc09-4149-a611-e434b68137e4"
     }
   ]
 }
