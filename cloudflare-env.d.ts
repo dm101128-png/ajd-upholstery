@@ -18,10 +18,11 @@ declare namespace Cloudflare {
         };
       };
     };
-    // Secret: set via `wrangler secret put RESEND_API_KEY` (never committed).
-    RESEND_API_KEY?: string;
+    // Gmail API OAuth secrets (never committed).
+    GMAIL_CLIENT_ID?: string;
+    GMAIL_CLIENT_SECRET?: string;
+    GMAIL_REFRESH_TOKEN?: string;
     // Optional overrides; see app/api/quote/route.ts.
     QUOTE_NOTIFY_EMAIL?: string;
-    QUOTE_FROM_EMAIL?: string;
   }
 }
