@@ -77,7 +77,7 @@ export default function QuoteForm() {
     <div className="quoteFormWrap">
       {status === "success" ? (
         <div className="formSuccess" role="status">
-          <p>Thank you. Your quote request has been sent to AJD Upholstery. We&rsquo;ll contact you using your preferred contact method.</p>
+          <p>Your request has been received.</p>
         </div>
       ) : (
         <form className="quoteForm" onSubmit={handleSubmit} noValidate>
