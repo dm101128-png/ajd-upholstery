@@ -110,6 +110,22 @@ test("the Our Work gallery renders photo-first cards with understated filter tab
   assert.doesNotMatch(html, /class="lightbox"/);
 });
 
+test("the Our Work gallery includes the complete green square-body leather project", async () => {
+  const worker = await loadWorker();
+  const { html } = await get(worker, "/our-work");
+  for (const title of [
+    "Custom square-body interior",
+    "Complete leather cabin",
+    "Diamond-stitched bucket seats",
+    "Hand-finished door panel",
+    "Matching leather door trim",
+    "Wrapped center console",
+    "Coordinated cabin details",
+  ]) {
+    assert.match(html, new RegExp(title));
+  }
+});
+
 test("the home page mentions more than 10 years of experience in prose, not a badge", async () => {
   const worker = await loadWorker();
   const { html } = await get(worker, "/");
