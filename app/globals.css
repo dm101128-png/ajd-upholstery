@@ -93,6 +93,9 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .galleryCard{background:none;border:0;padding:0;text-align:left;cursor:pointer}
 .galleryCard img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
 .galleryCaption{display:block;margin-top:10px;font:13px/1.4 Arial;color:var(--muted)}
+.galleryEmpty{min-height:260px;background:var(--paper2);border-top:3px solid var(--rust);padding:48px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.galleryEmpty h2{font-size:24px;margin-bottom:12px}
+.galleryEmpty p{max-width:620px;margin:0;color:var(--muted);font:16px/1.65 Arial}
 .lightbox{position:fixed;inset:0;background:rgba(8,8,8,.92);z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
 .lightbox img{max-width:90vw;max-height:80vh;object-fit:contain;cursor:default}
 .lightbox p{color:#eee;font:14px Arial;margin-top:16px}
@@ -181,6 +184,8 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
   .heroBgMobile{display:block;object-position:center 34%}
   .heroOverlay{background:linear-gradient(180deg,rgba(10,10,10,.12) 10%,rgba(10,10,10,.45) 48%,rgba(10,10,10,.9) 100%)}
   .previewGrid{grid-template-columns:1fr}
+  .galleryFilters{gap:14px 20px}
+  .galleryEmpty{min-height:220px;padding:32px 24px}
   .serviceGroups{grid-template-columns:1fr}
   .formGrid,.formGridThree{grid-template-columns:1fr}
   .footerTop{grid-template-columns:1fr;text-align:left}

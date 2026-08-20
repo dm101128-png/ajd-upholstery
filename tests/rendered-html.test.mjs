@@ -110,6 +110,17 @@ test("the Our Work gallery renders photo-first cards with understated filter tab
   assert.doesNotMatch(html, /class="lightbox"/);
 });
 
+test("the Our Work gallery uses the four main business categories", async () => {
+  const worker = await loadWorker();
+  const { html } = await get(worker, "/our-work");
+  for (const category of ["Boats", "Classic Cars", "Trucks", "Hotels"]) {
+    assert.match(html, new RegExp(`>${category}<`), `expected a ${category} filter`);
+  }
+  for (const retiredCategory of ["Bucket seats", "Door panels", "Leather upgrades", "Repairs and restorations"]) {
+    assert.doesNotMatch(html, new RegExp(`>${retiredCategory}<`, "i"), `did not expect a ${retiredCategory} filter`);
+  }
+});
+
 test("the Our Work gallery includes the complete green square-body leather project", async () => {
   const worker = await loadWorker();
   const { html } = await get(worker, "/our-work");

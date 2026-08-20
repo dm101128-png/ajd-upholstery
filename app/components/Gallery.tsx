@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import type { GalleryItem } from "../lib/gallery-items";
+import { galleryCategories, type GalleryItem } from "../lib/gallery-items";
 
 export default function Gallery({ items }: { items: GalleryItem[] }) {
-  const categories = useMemo(() => ["All", ...Array.from(new Set(items.map((i) => i.category)))], [items]);
+  const categories = ["All", ...galleryCategories];
   const [active, setActive] = useState("All");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -55,20 +55,27 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
         ))}
       </div>
 
-      <div className="galleryGrid">
-        {filtered.map((item, index) => (
-          <button
-            type="button"
-            key={item.src}
-            className="galleryCard"
-            onClick={(e) => openLightbox(index, e.currentTarget)}
-            aria-label={`View larger image: ${item.title}`}
-          >
-            <Image src={item.src} alt={item.alt} width={item.width} height={item.height} />
-            <span className="galleryCaption">{item.title}</span>
-          </button>
-        ))}
-      </div>
+      {filtered.length > 0 ? (
+        <div className="galleryGrid">
+          {filtered.map((item, index) => (
+            <button
+              type="button"
+              key={item.src}
+              className="galleryCard"
+              onClick={(e) => openLightbox(index, e.currentTarget)}
+              aria-label={`View larger image: ${item.title}`}
+            >
+              <Image src={item.src} alt={item.alt} width={item.width} height={item.height} />
+              <span className="galleryCaption">{item.title}</span>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="galleryEmpty" role="status">
+          <h2>{active} projects coming soon</h2>
+          <p>We&rsquo;re preparing photos from this part of our portfolio. Check back soon or contact us to discuss your project.</p>
+        </div>
+      )}
 
       {openItem && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={openItem.title} onClick={closeLightbox}>
