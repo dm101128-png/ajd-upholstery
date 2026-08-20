@@ -56,6 +56,7 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .introText{max-width:760px}
 .introText p:not(.eyebrow){font:17px/1.7 Arial;color:var(--muted)}
 .servicesPreview{background:var(--paper2)}
+.servicesPreviewInner{width:100%;max-width:720px}
 .serviceTags{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 32px;max-width:720px}
 .serviceTags li{font:15px/1.5 Arial;color:var(--text);padding-left:16px;position:relative}
 .serviceTags li:before{content:"–";position:absolute;left:0;color:var(--rust)}

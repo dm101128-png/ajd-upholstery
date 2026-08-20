@@ -56,19 +56,21 @@ export default function Home() {
       </section>
 
       <section className="section servicesPreview">
-        <p className="eyebrow">What we do</p>
-        <h2>Services</h2>
-        <ul className="serviceTags">
-          <li>Seat upholstery &amp; repair</li>
-          <li>Katzkin leather interiors</li>
-          <li>Headliners</li>
-          <li>Door panels</li>
-          <li>Custom stitching</li>
-          <li>Classic &amp; hot rod interiors</li>
-          <li>Truck &amp; commercial interiors</li>
-          <li>Full interior restoration</li>
-        </ul>
-        <Link className="textLink" href="/services">See all services <span>→</span></Link>
+        <div className="servicesPreviewInner">
+          <p className="eyebrow">What we do</p>
+          <h2>Services</h2>
+          <ul className="serviceTags">
+            <li>Seat upholstery &amp; repair</li>
+            <li>Katzkin leather interiors</li>
+            <li>Headliners</li>
+            <li>Door panels</li>
+            <li>Custom stitching</li>
+            <li>Classic &amp; hot rod interiors</li>
+            <li>Truck &amp; commercial interiors</li>
+            <li>Full interior restoration</li>
+          </ul>
+          <Link className="textLink" href="/services">See all services <span>→</span></Link>
+        </div>
       </section>
 
       <section className="section workPreview">
