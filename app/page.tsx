@@ -12,7 +12,22 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <Image className="heroBg" src="/shop-bench-work.png" alt="" fill priority sizes="100vw" />
+        <Image
+          className="heroBg heroBgDesktop"
+          src="/work-interior.png"
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 640px) 0px, 100vw"
+        />
+        <Image
+          className="heroBg heroBgMobile"
+          src="/shop-bench-work.png"
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 640px) 100vw, 0px"
+        />
         <div className="heroOverlay" />
         <div className="heroContent">
           <h1>Built to Last.</h1>
