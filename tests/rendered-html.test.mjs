@@ -110,13 +110,16 @@ test("the Our Work gallery renders photo-first cards with understated filter tab
   assert.doesNotMatch(html, /class="lightbox"/);
 });
 
-test("the Our Work gallery uses the four main business categories", async () => {
+test("the Our Work gallery uses the requested category tabs, exactly once each and in order", async () => {
   const worker = await loadWorker();
   const { html } = await get(worker, "/our-work");
-  for (const category of ["Boats", "Classic Cars", "Trucks", "Hotels"]) {
-    assert.match(html, new RegExp(`>${category}<`), `expected a ${category} filter`);
+  const expectedOrder = ["All", "Boats", "Trucks", "Hot Rods", "Cars", "Hotels", "Baseball Fields"];
+  const tabMatches = [...html.matchAll(/role="tab"[^>]*>([^<]+)</g)].map((m) => m[1]);
+  assert.deepEqual(tabMatches, expectedOrder);
+  for (const category of expectedOrder) {
+    assert.equal(tabMatches.filter((tab) => tab === category).length, 1, `expected exactly one ${category} filter`);
   }
-  for (const retiredCategory of ["Bucket seats", "Door panels", "Leather upgrades", "Repairs and restorations"]) {
+  for (const retiredCategory of ["Classic Cars", "Bucket seats", "Door panels", "Leather upgrades", "Repairs and restorations"]) {
     assert.doesNotMatch(html, new RegExp(`>${retiredCategory}<`, "i"), `did not expect a ${retiredCategory} filter`);
   }
 });

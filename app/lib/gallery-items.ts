@@ -1,4 +1,4 @@
-export const galleryCategories = ["Boats", "Classic Cars", "Trucks", "Hotels"] as const;
+export const galleryCategories = ["Boats", "Trucks", "Hot Rods", "Cars", "Hotels", "Baseball Fields"] as const;
 
 export type GalleryCategory = (typeof galleryCategories)[number];
 
@@ -21,7 +21,7 @@ export const galleryItems: GalleryItem[] = [
   { src: "/our-work/green-squarebody/passenger-cabin.jpg", alt: "Passenger-side view of a complete brown leather interior in a green classic truck", title: "Coordinated cabin details", category: "Trucks", width: 1280, height: 960 },
   { src: "/work-interior.png", alt: "Custom two-tone leather bucket seats and dash trim", title: "Custom truck interior", category: "Trucks", width: 1448, height: 1086 },
   { src: "/work-door-panel.png", alt: "Custom stitched leather door panel", title: "Custom truck door panel", category: "Trucks", width: 1448, height: 1086 },
-  { src: "/work-vw-restoration.png", alt: "Classic Volkswagen Beetle interior restoration", title: "Classic restoration", category: "Classic Cars", width: 1086, height: 1448 },
+  { src: "/work-vw-restoration.png", alt: "Classic Volkswagen Beetle interior restoration", title: "Classic restoration", category: "Cars", width: 1086, height: 1448 },
   { src: "/shop-fabric-wall.png", alt: "Wall of leather and vinyl rolls in the AJD Upholstery shop", title: "Material selection", category: null, width: 1448, height: 1086 },
   { src: "/shop-bench-work.png", alt: "AJD Upholstery hand-stitching a seat in the shop", title: "In the shop", category: null, width: 1086, height: 1448 },
   { src: "/shop-supply-cabinet.png", alt: "Dyes, adhesives, and finishing supplies in the AJD Upholstery shop", title: "Shop supplies", category: null, width: 1086, height: 1448 },
