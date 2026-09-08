@@ -100,6 +100,14 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .lightbox img{max-width:90vw;max-height:80vh;object-fit:contain;cursor:default}
 .lightbox p{color:#eee;font:14px Arial;margin-top:16px}
 .lightboxClose{position:absolute;top:20px;right:24px;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
+.lightboxContent{max-width:100%;max-height:100%;overflow:auto;text-align:center;cursor:default}
+.lightboxContent h2{color:#fff;font-size:24px;margin:0 0 16px}
+.lightboxContent img{display:block;width:auto;height:auto;max-width:100%;max-height:65dvh;margin:auto;object-fit:contain}
+.lightboxControls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px;color:#fff;font:14px/1.4 Arial}
+.lightboxControls button{background:#242424;border:1px solid #777;border-radius:3px;color:#fff;padding:12px;min-height:44px;font:14px/1.4 Arial;cursor:pointer}
+.lightboxControls button:hover{background:#393939}
+.lightboxControls button:focus-visible,.lightboxClose:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:600px){.lightbox{padding:64px 16px 24px}.lightboxControls{gap:10px}.lightboxContent img{max-height:60dvh}}
 
 /* Katzkin page */
 .katzkinHeroActions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:30px}
