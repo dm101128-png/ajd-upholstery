@@ -8,14 +8,19 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
   const categories = ["All", ...galleryCategories];
   const [active, setActive] = useState("All");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   const filtered = active === "All" ? items : items.filter((i) => i.category === active);
   const openItem = openIndex !== null ? filtered[openIndex] : null;
+  const photos = openItem ? (openItem.photos?.length ? openItem.photos : [openItem]) : [];
+  const openPhoto = photos[photoIndex];
 
   function openLightbox(index: number, trigger: HTMLButtonElement) {
     lastTriggerRef.current = trigger;
+    setPhotoIndex(0);
     setOpenIndex(index);
   }
 
@@ -26,13 +31,37 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
 
   // Escape closes the lightbox; focus moves to the close button on open.
   useEffect(() => {
-    if (openItem === null) return;
+    if (!openItem) return;
     closeButtonRef.current?.focus();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const photoCount = openItem.photos?.length || 1;
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") closeLightbox();
+      if (photoCount > 1 && (event.key === "ArrowLeft" || event.key === "ArrowRight")) {
+        event.preventDefault();
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        setPhotoIndex((index) => (index + direction + photoCount) % photoCount);
+      }
+      if (event.key === "Tab") {
+        const buttons = dialogRef.current?.querySelectorAll<HTMLButtonElement>("button");
+        if (!buttons?.length) return;
+        const first = buttons[0];
+        const last = buttons[buttons.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
     }
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
   }, [openItem]);
 
   return (
@@ -48,6 +77,7 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
             onClick={() => {
               setActive(cat);
               setOpenIndex(null);
+              setPhotoIndex(0);
             }}
           >
             {cat}
@@ -63,7 +93,7 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
               key={item.src}
               className="galleryCard"
               onClick={(e) => openLightbox(index, e.currentTarget)}
-              aria-label={`View larger image: ${item.title}`}
+              aria-label={item.photos?.length ? `View ${item.title} photos` : `View larger image: ${item.title}`}
             >
               <Image src={item.src} alt={item.alt} width={item.width} height={item.height} />
               <span className="galleryCaption">{item.title}</span>
@@ -77,11 +107,21 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
         </div>
       )}
 
-      {openItem && (
-        <div className="lightbox" role="dialog" aria-modal="true" aria-label={openItem.title} onClick={closeLightbox}>
+      {openItem && openPhoto && (
+        <div className="lightbox" ref={dialogRef} role="dialog" aria-modal="true" aria-label={openItem.title} onClick={closeLightbox}>
           <button type="button" className="lightboxClose" aria-label="Close" ref={closeButtonRef} onClick={closeLightbox}>×</button>
-          <Image src={openItem.src} alt={openItem.alt} width={openItem.width} height={openItem.height} onClick={(e) => e.stopPropagation()} />
-          <p onClick={(e) => e.stopPropagation()}>{openItem.title}</p>
+          <div className="lightboxContent" onClick={(e) => e.stopPropagation()}>
+            {openItem.photos?.length ? <h2>{openItem.title}</h2> : null}
+            <Image src={openPhoto.src} alt={openPhoto.alt} width={openPhoto.width} height={openPhoto.height} />
+            <p>{openPhoto.title}</p>
+            {photos.length > 1 && (
+              <div className="lightboxControls">
+                <button type="button" aria-label="Previous photo" onClick={() => setPhotoIndex((index) => (index - 1 + photos.length) % photos.length)}>← Previous</button>
+                <span role="status" aria-live="polite">{photoIndex + 1} / {photos.length}</span>
+                <button type="button" aria-label="Next photo" onClick={() => setPhotoIndex((index) => (index + 1) % photos.length)}>Next →</button>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
