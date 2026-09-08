@@ -5,7 +5,7 @@ import { galleryItems } from "../lib/gallery-items";
 
 export const metadata: Metadata = {
   title: "Our Work | AJD Upholstery",
-  description: "Explore AJD Upholstery projects for boats, classic cars, trucks, and hotels.",
+  description: "Explore AJD Upholstery projects for boats, trucks, hot rods, cars, hotels, and baseball fields.",
 };
 
 export default function OurWorkPage() {
