@@ -73,10 +73,10 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
             className={`galleryCategory${active === cat ? " galleryCategoryActive" : ""}`}
             onClick={() => { setActive(cat); setOpenIndex(null); setPhotoIndex(0); }}>
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              {index === 0 && <><path d="M10 40V29l7-12h29l8 12v11M10 29h44M18 29l4-12m20 0 5 12M10 35h8m28 0h8M18 40h28"/><circle cx="18" cy="43" r="5"/><circle cx="46" cy="43" r="5"/></>}
+              {index === 0 && <><path d="M5 41v-8l11-3 9-11h15l10 11 9 3v8h-6M11 41H5m18 0h18M18 30h29M25 23l-5 7m12-11v11m8-7 6 7M6 35h5m43 0h4M35 34h5"/><circle cx="17" cy="41" r="6"/><circle cx="47" cy="41" r="6"/><circle cx="17" cy="41" r="2"/><circle cx="47" cy="41" r="2"/></>}
               {index === 1 && <><path d="M8 37h48L46 49H20L8 37Zm14 0V26h21l6 11M29 26V15h10v11M7 54q6-6 12 0t12 0 12 0 12 0"/></>}
-              {index === 2 && <><path d="M5 15h32v29H5V15Zm32 11h13l9 11v7H37M43 26v11h16"/><circle cx="16" cy="46" r="5"/><circle cx="47" cy="46" r="5"/></>}
-              {index === 3 && <><path d="M9 47V29l9-12h28l9 12v18M9 29h46M22 17l-3 12m23-12 3 12M23 35h18v11H23zM32 6v6m-8-4 3 4m13-4-3 4"/></>}
+              {index === 2 && <><path d="M4 28h24V17h14l7 14h10v11h-6M4 28v14h6m12 0h19M28 28v14M32 21h7l5 10H32V21Zm-28 6h24M33 35h4m18 0h4"/><circle cx="16" cy="42" r="6"/><circle cx="47" cy="42" r="6"/><circle cx="16" cy="42" r="2"/><circle cx="47" cy="42" r="2"/></>}
+              {index === 3 && <><path d="M24 5h16c6 0 9 5 9 11v32c0 7-3 11-9 11H24c-6 0-9-4-9-11V16c0-6 3-11 9-11ZM20 17l3 7h18l3-7M20 47l3-6h18l3 6M10 21h5m34 0h5M19 27v11m26-11v11"/><rect x="23" y="28" width="18" height="10" rx="2"/><path d="m28 35 7-4"/></>}
             </svg>
             <span>{cat}</span><small>Explore projects <span aria-hidden="true">→</span></small>
           </button>
