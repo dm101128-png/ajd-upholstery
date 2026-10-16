@@ -18,7 +18,7 @@ export interface GalleryItem extends GalleryPhoto {
 
 export const galleryItems: GalleryItem[] = [
   {
-    src: "/our-work/bronco/cover.jpg", alt: "Bronze Ford Bronco at sunset", title: "Bronco", category: "Cars", width: 1280, height: 960,
+    src: "/our-work/bronco/cover.jpg", alt: "Bronze Ford Bronco at sunset", title: "Bronco", category: "Big Trucks", width: 1280, height: 960,
     photos: [
       { src: "/our-work/bronco/seats.jpg", alt: "Custom tan and black Bronco bucket seats with embroidered headrests and matching rear bench", title: "Custom Bronco seats", width: 1280, height: 960 },
       { src: "/our-work/bronco/embroidery.jpg", alt: "Close-up of the embroidered Bronco logo on a tan seat back", title: "Bronco embroidery detail", width: 1280, height: 960 },

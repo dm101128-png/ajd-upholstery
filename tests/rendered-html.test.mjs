@@ -118,7 +118,7 @@ test("the Bronco project opens its three supplied seat photos in order", async (
   const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
   const { galleryItems } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
   const bronco = galleryItems.find((item) => item.title === "Bronco");
-  assert.equal(bronco.category, "Cars");
+  assert.equal(bronco.category, "Big Trucks");
   assert.equal(bronco.src, "/our-work/bronco/cover.jpg");
   assert.deepEqual(bronco.photos.map((photo) => photo.src), [
     "/our-work/bronco/seats.jpg",
@@ -136,7 +136,7 @@ test("project groups retain all seven square-body photos and the existing car pr
   const { stripTypeScriptTypes } = await import("node:module");
   const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
   const { galleryProjects } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
-  assert.deepEqual(galleryProjects.filter(p => p.category === "Cars").map(p => p.title), ["Bronco", "Volkswagen Beetle"]);
+  assert.deepEqual(galleryProjects.filter(p => p.category === "Cars").map(p => p.title), ["Volkswagen Beetle"]);
   assert.equal(galleryProjects.find(p => p.title === "Green Square-Body Truck").photos.length, 7);
   for (const project of galleryProjects) {
     for (const photo of [project, ...(project.photos || [])]) {
