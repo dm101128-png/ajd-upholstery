@@ -100,14 +100,15 @@ test("no page on the site uses a mailto: link for the quote flow", async () => {
   }
 });
 
-test("Our Work starts with four category buttons and no mixed project grid", async () => {
+test("Our Work starts with five category buttons and no mixed project grid", async () => {
   const worker = await loadWorker();
   const { html } = await get(worker, "/our-work");
-  assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 4);
+  assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 5);
   assert.match(html, /Cars/);
   assert.match(html, /Boats/);
   assert.match(html, /Big Trucks/);
   assert.match(html, /Roof &amp; Sunroof Repair/);
+  assert.match(html, /Dugout Pits/);
   assert.doesNotMatch(html, /class="galleryCard"/);
   assert.doesNotMatch(html, /class="lightbox"/);
 });

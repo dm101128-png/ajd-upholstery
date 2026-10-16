@@ -1,4 +1,4 @@
-export const galleryCategories = ["Cars", "Boats", "Big Trucks", "Roof & Sunroof Repair"] as const;
+export const galleryCategories = ["Cars", "Boats", "Big Trucks", "Roof & Sunroof Repair", "Dugout Pits"] as const;
 
 export type GalleryCategory = (typeof galleryCategories)[number];
 

@@ -77,6 +77,7 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
               {index === 1 && <><path d="M8 37h48L46 49H20L8 37Zm14 0V26h21l6 11M29 26V15h10v11M7 54q6-6 12 0t12 0 12 0 12 0"/></>}
               {index === 2 && <><path d="M4 28h24V17h14l7 14h10v11h-6M4 28v14h6m12 0h19M28 28v14M32 21h7l5 10H32V21Zm-28 6h24M33 35h4m18 0h4"/><circle cx="16" cy="42" r="6"/><circle cx="47" cy="42" r="6"/><circle cx="16" cy="42" r="2"/><circle cx="47" cy="42" r="2"/></>}
               {index === 3 && <><path d="M24 5h16c6 0 9 5 9 11v32c0 7-3 11-9 11H24c-6 0-9-4-9-11V16c0-6 3-11 9-11ZM20 17l3 7h18l3-7M20 47l3-6h18l3 6M10 21h5m34 0h5M19 27v11m26-11v11"/><rect x="23" y="28" width="18" height="10" rx="2"/><path d="m28 35 7-4"/></>}
+              {index === 4 && <><path d="M7 25 32 13l25 12M12 25v27h40V25M8 52h48M18 38h28v7H18zM22 45v7m20-7v7M17 25h30"/></>}
             </svg>
             <span>{cat}</span><small>Explore projects <span aria-hidden="true">→</span></small>
           </button>
