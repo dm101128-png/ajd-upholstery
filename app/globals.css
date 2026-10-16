@@ -100,6 +100,14 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .lightbox img{max-width:90vw;max-height:80vh;object-fit:contain;cursor:default}
 .lightbox p{color:#eee;font:14px Arial;margin-top:16px}
 .lightboxClose{position:absolute;top:20px;right:24px;background:none;border:0;color:#fff;font-size:32px;line-height:1;cursor:pointer}
+.lightboxContent{max-width:100%;max-height:100%;overflow:auto;text-align:center;cursor:default}
+.lightboxContent h2{color:#fff;font-size:24px;margin:0 0 16px}
+.lightboxContent img{display:block;width:auto;height:auto;max-width:100%;max-height:65dvh;margin:auto;object-fit:contain}
+.lightboxControls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px;color:#fff;font:14px/1.4 Arial}
+.lightboxControls button{background:#242424;border:1px solid #777;border-radius:3px;color:#fff;padding:12px;min-height:44px;font:14px/1.4 Arial;cursor:pointer}
+.lightboxControls button:hover{background:#393939}
+.lightboxControls button:focus-visible,.lightboxClose:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@media(max-width:600px){.lightbox{padding:64px 16px 24px}.lightboxControls{gap:10px}.lightboxContent img{max-height:60dvh}}
 
 /* Katzkin page */
 .katzkinHeroActions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:30px}
@@ -201,3 +209,18 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
   .presentationWebsiteLink{border:1px solid #666;border-radius:3px;padding:12px 14px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Category-first project gallery */
+.galleryCategories { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-bottom:36px; }
+.galleryCategory { display:flex; flex-direction:column; align-items:flex-start; gap:16px; min-height:210px; padding:26px; border:1px solid #b7a58a; border-radius:12px; background:#f6f1e9; color:#27221c; cursor:pointer; text-align:left; transition:transform .18s,box-shadow .18s; }
+.galleryCategory svg { width:64px; height:64px; }
+.galleryCategory > span { font:inherit; font-size:21px; font-weight:700; }
+.galleryCategory small { margin-top:auto; font-size:14px; }
+.galleryCategory:hover { transform:translateY(-4px); box-shadow:0 10px 24px #0002; }
+.galleryCategoryActive { background:#29251f; color:#fff7e9; border-color:#29251f; }
+.galleryCategory:focus-visible,.galleryProjectHeading button:focus-visible { outline:3px solid #b47e37; outline-offset:4px; }
+.galleryProjectHeading { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:24px; }
+.galleryProjectHeading button { background:transparent; color:inherit; border:1px solid currentColor; border-radius:6px; padding:10px 16px; cursor:pointer; }
+.galleryPrompt { text-align:center; padding:18px 0; }
+@media(max-width:900px) { .galleryCategories { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:480px) { .galleryCategories { gap:10px; } .galleryCategory { padding:16px; min-height:190px; } .galleryCategory > span { font-size:18px; } .galleryProjectHeading { align-items:flex-start; flex-direction:column; } }

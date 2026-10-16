@@ -100,43 +100,48 @@ test("no page on the site uses a mailto: link for the quote flow", async () => {
   }
 });
 
-test("the Our Work gallery renders photo-first cards with understated filter tabs, not buttons styled as services", async () => {
+test("Our Work starts with four category buttons and no mixed project grid", async () => {
   const worker = await loadWorker();
   const { html } = await get(worker, "/our-work");
-  assert.match(html, /role="tablist"/);
-  assert.match(html, /role="tab"/);
-  assert.match(html, /class="galleryCard"/);
-  // The lightbox is closed on first render (no JS has run yet).
+  assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 4);
+  assert.match(html, /Cars/);
+  assert.match(html, /Boats/);
+  assert.match(html, /Big Trucks/);
+  assert.match(html, /Roof &amp; Sunroof Repair/);
+  assert.doesNotMatch(html, /class="galleryCard"/);
   assert.doesNotMatch(html, /class="lightbox"/);
 });
 
-test("the Our Work gallery uses the requested category tabs, exactly once each and in order", async () => {
-  const worker = await loadWorker();
-  const { html } = await get(worker, "/our-work");
-  const expectedOrder = ["All", "Boats", "Trucks", "Hot Rods", "Cars", "Hotels", "Baseball Fields"];
-  const tabMatches = [...html.matchAll(/role="tab"[^>]*>([^<]+)</g)].map((m) => m[1]);
-  assert.deepEqual(tabMatches, expectedOrder);
-  for (const category of expectedOrder) {
-    assert.equal(tabMatches.filter((tab) => tab === category).length, 1, `expected exactly one ${category} filter`);
-  }
-  for (const retiredCategory of ["Classic Cars", "Bucket seats", "Door panels", "Leather upgrades", "Repairs and restorations"]) {
-    assert.doesNotMatch(html, new RegExp(`>${retiredCategory}<`, "i"), `did not expect a ${retiredCategory} filter`);
+test("the Bronco project opens its three supplied seat photos in order", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const { stripTypeScriptTypes } = await import("node:module");
+  const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
+  const { galleryItems } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
+  const bronco = galleryItems.find((item) => item.title === "Bronco");
+  assert.equal(bronco.category, "Cars");
+  assert.equal(bronco.src, "/our-work/bronco/cover.jpg");
+  assert.deepEqual(bronco.photos.map((photo) => photo.src), [
+    "/our-work/bronco/seats.jpg",
+    "/our-work/bronco/embroidery.jpg",
+    "/our-work/bronco/complete-seat-set.jpg",
+  ]);
+  for (const photo of [bronco, ...bronco.photos]) {
+    const bytes = await readFile(new URL(`../public${photo.src}`, import.meta.url));
+    assert.ok(bytes.length > 0, `missing photo: ${photo.src}`);
   }
 });
 
-test("the Our Work gallery includes the complete green square-body leather project", async () => {
-  const worker = await loadWorker();
-  const { html } = await get(worker, "/our-work");
-  for (const title of [
-    "Custom square-body interior",
-    "Complete leather cabin",
-    "Diamond-stitched bucket seats",
-    "Hand-finished door panel",
-    "Matching leather door trim",
-    "Wrapped center console",
-    "Coordinated cabin details",
-  ]) {
-    assert.match(html, new RegExp(title));
+test("project groups retain all seven square-body photos and the existing car projects", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const { stripTypeScriptTypes } = await import("node:module");
+  const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
+  const { galleryProjects } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
+  assert.deepEqual(galleryProjects.filter(p => p.category === "Cars").map(p => p.title), ["Bronco", "Volkswagen Beetle"]);
+  assert.equal(galleryProjects.find(p => p.title === "Green Square-Body Truck").photos.length, 7);
+  for (const project of galleryProjects) {
+    for (const photo of [project, ...(project.photos || [])]) {
+      assert.ok((await readFile(new URL(`../public${photo.src}`, import.meta.url))).length);
+    }
   }
 });
 
