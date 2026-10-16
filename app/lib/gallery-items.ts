@@ -112,4 +112,28 @@ export const galleryProjects: GalleryItem[] = [
   { ...galleryItems[10], title: "Volkswagen Beetle" },
 
   { ...galleryItems[8], title: "Custom Truck Interior", photos: galleryItems.slice(8, 10) },
+  {
+  "src": "/our-work/boats/xt-boat/cover.jpg",
+  "title": "XT Boat",
+  "alt": "Blue and white XT boat with orange and blue upholstery beside a lakeside dock",
+  "category": "Boats",
+  "width": 1024,
+  "height": 1280,
+  "photos": [
+    {
+      "src": "/our-work/boats/xt-boat/cockpit-seating.jpg",
+      "title": "Custom cockpit seating",
+      "alt": "XT boat cockpit with white, orange, and blue diamond-stitched seats and blue carpet",
+      "width": 2880,
+      "height": 3840
+    },
+    {
+      "src": "/our-work/boats/xt-boat/rear-seating.jpg",
+      "title": "Rear seating and upholstery",
+      "alt": "XT boat rear seating with matching white, orange, and blue upholstery in the workshop",
+      "width": 2880,
+      "height": 3840
+    }
+  ]
+},
 ];
