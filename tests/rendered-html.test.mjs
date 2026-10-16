@@ -131,13 +131,16 @@ test("the Bronco project opens its three supplied seat photos in order", async (
   }
 });
 
-test("project groups retain all seven square-body photos and the existing car projects", async () => {
+test("C10 follows Bronco under Big Trucks and retains all eight supplied interior photos", async () => {
   const { readFile } = await import("node:fs/promises");
   const { stripTypeScriptTypes } = await import("node:module");
   const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
   const { galleryProjects } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
   assert.deepEqual(galleryProjects.filter(p => p.category === "Cars").map(p => p.title), ["Volkswagen Beetle"]);
-  assert.equal(galleryProjects.find(p => p.title === "Green Square-Body Truck").photos.length, 7);
+  assert.deepEqual(galleryProjects.filter(p => p.category === "Big Trucks").slice(0,2).map(p => p.title), ["Bronco", "C10"]);
+  const c10 = galleryProjects.find(p => p.title === "C10");
+  assert.equal(c10.src, "/our-work/big-trucks/c10/cover.jpg");
+  assert.equal(c10.photos.length, 8);
   for (const project of galleryProjects) {
     for (const photo of [project, ...(project.photos || [])]) {
       assert.ok((await readFile(new URL(`../public${photo.src}`, import.meta.url))).length);

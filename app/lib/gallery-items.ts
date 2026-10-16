@@ -43,7 +43,73 @@ export const galleryItems: GalleryItem[] = [
 // Keep original photo records intact; group related photos into project buttons.
 export const galleryProjects: GalleryItem[] = [
   galleryItems[0],
+  {
+  "src": "/our-work/big-trucks/c10/cover.jpg",
+  "title": "C10",
+  "alt": "Green Chevrolet C10 pickup at sunset",
+  "category": "Big Trucks",
+  "width": 960,
+  "height": 472,
+  "photos": [
+    {
+      "src": "/our-work/big-trucks/c10/interior-1.jpg",
+      "title": "Passenger door and cabin",
+      "alt": "Brown leather passenger door panel with diamond stitching in the green C10",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/our-work/big-trucks/c10/interior-2.jpg",
+      "title": "Driver cabin",
+      "alt": "C10 driver cabin with brown leather seat, door panel, and steering wheel",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/our-work/big-trucks/c10/interior-3.jpg",
+      "title": "Passenger-side interior",
+      "alt": "C10 passenger seat and matching brown leather door trim",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/our-work/big-trucks/c10/interior-4.jpg",
+      "title": "Custom center console",
+      "alt": "Brown leather center console and dashboard in the C10",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/our-work/big-trucks/c10/interior-5.jpg",
+      "title": "Driver-side upholstery",
+      "alt": "C10 driver seat and matching diamond-stitched door panel",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/our-work/big-trucks/c10/interior-6.jpg",
+      "title": "Diamond-stitched seat",
+      "alt": "Close-up of the C10 brown leather bucket seat with diamond stitching",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/our-work/big-trucks/c10/interior-7.jpg",
+      "title": "Passenger cabin detail",
+      "alt": "C10 passenger cabin with leather seat, dashboard, and console",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "src": "/our-work/big-trucks/c10/interior-8.jpg",
+      "title": "Passenger cabin view",
+      "alt": "Another view of the C10 passenger seat and matching interior",
+      "width": 1280,
+      "height": 960
+    }
+  ]
+},
   { ...galleryItems[10], title: "Volkswagen Beetle" },
-  { ...galleryItems[1], title: "Green Square-Body Truck", photos: galleryItems.slice(1, 8) },
+
   { ...galleryItems[8], title: "Custom Truck Interior", photos: galleryItems.slice(8, 10) },
 ];
