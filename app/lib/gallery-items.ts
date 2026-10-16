@@ -121,6 +121,13 @@ export const galleryProjects: GalleryItem[] = [
   "height": 1280,
   "photos": [
     {
+      "src": "/our-work/boats/xt-boat/workshop-overview.jpg",
+      "title": "XT boat and custom upholstery in the workshop",
+      "alt": "XT boat on its trailer with blue, orange, and white upholstered seats arranged in the workshop",
+      "width": 1536,
+      "height": 2048
+    },
+    {
       "src": "/our-work/boats/xt-boat/cockpit-seating.jpg",
       "title": "Custom cockpit seating",
       "alt": "XT boat cockpit with white, orange, and blue diamond-stitched seats and blue carpet",
