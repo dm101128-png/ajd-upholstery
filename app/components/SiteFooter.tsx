@@ -17,11 +17,10 @@ export default function SiteFooter() {
           ))}
         </nav>
 
-        <div className="footerContact">
-          <a href={`mailto:${businessInfo.email}`}>{businessInfo.email}</a>
+        {(businessInfo.phone || businessInfo.address) && <div className="footerContact">
           {businessInfo.phone && <a href={`tel:${businessInfo.phone}`}>{businessInfo.phone}</a>}
           {businessInfo.address && <span>{businessInfo.address}</span>}
-        </div>
+        </div>}
       </div>
 
       <div className="footerBottom">

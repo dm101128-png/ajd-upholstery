@@ -8,7 +8,6 @@
 export const businessInfo = {
   name: "AJD Upholstery",
   tagline: "Quality automotive upholstery",
-  email: "ajd.david.upholstery@gmail.com",
   // PLACEHOLDER: confirmed business phone number not found in the repo.
   phone: null as string | null,
   // PLACEHOLDER: shop address not found in the repo.

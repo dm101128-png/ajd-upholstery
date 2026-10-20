@@ -85,6 +85,6 @@ export async function handleQuoteSubmission(rawBody: unknown, deps: QuoteHandler
   console.error("[quote] no delivery path succeeded:", emailResult.reason ?? "unknown");
   return {
     status: 500,
-    body: { error: "We couldn't process your request right now. Please try again, or reach us directly at ajd.david.upholstery@gmail.com." },
+    body: { error: "We couldn't process your request right now. Please try again later." },
   };
 }
