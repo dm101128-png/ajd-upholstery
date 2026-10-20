@@ -151,3 +151,23 @@ test("handleQuoteSubmission: a different contact is not blocked by another custo
   assert.equal(other.status, 201);
   assert.equal(repository.rows.length, 2);
 });
+
+test("disconnected email: saves a new quote without network requests", async () => {
+  const repository = createInMemoryQuoteRepository();
+  const originalFetch = globalThis.fetch;
+  let networkCalls = 0;
+  globalThis.fetch = async () => { networkCalls++; throw new Error("Unexpected network request"); };
+  try {
+    const result = await handleQuoteSubmission(validPayload, { repository });
+    assert.equal(result.status, 201);
+    assert.equal(repository.rows.length, 1);
+    assert.equal(repository.rows[0].status, "new");
+    assert.equal(networkCalls, 0);
+  } finally { globalThis.fetch = originalFetch; }
+});
+
+test("disconnected email: unavailable storage cannot report success", async () => {
+  const result = await handleQuoteSubmission(validPayload, { repository: null });
+  assert.equal(result.status, 500);
+  assert.ok(result.body.error);
+});

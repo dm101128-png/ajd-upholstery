@@ -18,11 +18,5 @@ declare namespace Cloudflare {
         };
       };
     };
-    // Gmail API OAuth secrets (never committed).
-    GMAIL_CLIENT_ID?: string;
-    GMAIL_CLIENT_SECRET?: string;
-    GMAIL_REFRESH_TOKEN?: string;
-    // Optional overrides; see app/api/quote/route.ts.
-    QUOTE_NOTIFY_EMAIL?: string;
   }
 }

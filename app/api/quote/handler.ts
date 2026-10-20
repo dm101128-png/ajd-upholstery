@@ -11,7 +11,7 @@ export interface EmailResult {
 export interface QuoteHandlerDeps {
   /** Null when D1 isn't available/configured (e.g. not provisioned yet). */
   repository: QuoteRepository | null;
-  sendEmail: (payload: QuotePayload) => Promise<EmailResult>;
+  sendEmail?: (payload: QuotePayload) => Promise<EmailResult>;
 }
 
 export interface QuoteHandlerResult {
@@ -22,7 +22,7 @@ export interface QuoteHandlerResult {
 /**
  * Pure request handler for POST /api/quote — no Cloudflare/D1/fetch APIs
  * touched directly, so it's fully unit-testable with fakes. The route.ts
- * wrapper supplies the real D1 repository and Resend email sender.
+ * wrapper supplies the real D1 repository. Email is optional and disconnected in production.
  */
 export async function handleQuoteSubmission(rawBody: unknown, deps: QuoteHandlerDeps): Promise<QuoteHandlerResult> {
   const payload = parseQuotePayload(rawBody);
@@ -65,11 +65,11 @@ export async function handleQuoteSubmission(rawBody: unknown, deps: QuoteHandler
     }
   }
 
-  const emailResult = await sendEmail(payload);
+  const emailResult = sendEmail ? await sendEmail(payload) : { sent: false, reason: "Email notifications are disconnected" };
 
   if (insertedId !== null && workingRepository) {
     try {
-      await workingRepository.markStatus(insertedId, emailResult.sent ? "emailed" : "email_failed");
+      if (sendEmail) await workingRepository.markStatus(insertedId, emailResult.sent ? "emailed" : "email_failed");
     } catch {
       // Non-fatal: the quote is already safely stored.
     }
