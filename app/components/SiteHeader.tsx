@@ -3,13 +3,16 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks } from "../lib/business-info";
+import { businessInfo, navLinks } from "../lib/business-info";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="siteHeader">
+      <div className="sitePhoneBar">
+        <a href={`tel:+1${businessInfo.phone.replace(/\D/g, "")}`}>{businessInfo.phone}</a>
+      </div>
       <div className="siteHeaderBar">
         <Link className="brand" href="/" aria-label="AJD Upholstery home">
           <Image className="brandLogo" src="/ajd-logo.jpg" alt="AJD Upholstery" width={48} height={48} priority />
