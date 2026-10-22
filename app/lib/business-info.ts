@@ -9,8 +9,7 @@ export const businessInfo = {
   name: "AJD Upholstery",
   tagline: "Quality automotive upholstery",
   phone: "214-489-1200",
-  // PLACEHOLDER: shop address not found in the repo.
-  address: null as string | null,
+  address: "601 North Beltline, Suite 180, Irving, Texas",
   // PLACEHOLDER: no social links found in the repo.
   social: {
     instagram: null as string | null,
