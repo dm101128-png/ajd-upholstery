@@ -10,10 +10,14 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .pageHero{background:var(--paper2)}.pageHeroIntro{max-width:640px;font:17px/1.6 Arial;color:var(--muted)}
 
 /* Header / nav */
-.sitePhoneBar{display:flex;justify-content:center;background:var(--rust);color:#fff;text-align:center}
-.sitePhoneBar a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 20px;font:700 18px/1.4 Arial,Helvetica,sans-serif;letter-spacing:1px;white-space:nowrap}
+.sitePhoneBar{background:var(--rust);color:#fff}
+.siteContactInner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:32px}
+.sitePhoneBar a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 0;font:400 13px/1.4 Arial,Helvetica,sans-serif}
+.sitePhoneBar .sitePhoneLink{font-weight:700;white-space:nowrap;flex:none}
+.sitePhoneBar svg{width:16px;height:16px;flex:none}
 .sitePhoneBar a:hover{text-decoration:underline}
-.sitePhoneBar a:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.sitePhoneBar a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(max-width:600px){.siteContactInner{flex-wrap:wrap;gap:0;padding:0 16px}.sitePhoneBar .siteAddressLink{flex-basis:100%;padding-top:0}.sitePhoneBar .siteAddressLink span{max-width:100%}}
 .siteHeader{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;border-bottom:1px solid var(--lineDark)}
 .siteHeaderBar{max-width:1180px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;flex:none}
