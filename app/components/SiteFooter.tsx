@@ -24,6 +24,9 @@ export default function SiteFooter() {
       </div>
 
       <div className="footerBottom">
+        <Link className="footerLogoLink" href="/" aria-label="AJD Upholstery home">
+          <Image className="footerLogo" src="/ajd-logo.jpg" alt="AJD Upholstery" width={160} height={160} />
+        </Link>
         <small>© {new Date().getFullYear()} AJD Upholstery. All rights reserved.</small>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-export const galleryCategories = ["Cars", "Boats", "Big Trucks", "Roof & Sunroof Repair", "Dugout Pits"] as const;
+export const galleryCategories = ["Cars", "Classic Cars", "Boats", "Big Trucks", "Roof & Sunroof Repair", "Dugout Pits"] as const;
 
 export type GalleryCategory = (typeof galleryCategories)[number];
 
@@ -109,7 +109,7 @@ export const galleryProjects: GalleryItem[] = [
     }
   ]
 },
-  { ...galleryItems[10], title: "Volkswagen Beetle" },
+  { ...galleryItems[10], title: "Volkswagen Beetle", category: "Classic Cars", photos: [galleryItems[10]] },
 
   { ...galleryItems[8], title: "Custom Truck Interior", photos: galleryItems.slice(8, 10) },
   {

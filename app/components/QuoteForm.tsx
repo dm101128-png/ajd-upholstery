@@ -7,7 +7,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 const contactMethods = ["Email", "Phone", "Either"] as const;
 
-export default function QuoteForm() {
+export default function QuoteForm({ initialWorkType = "" }: { initialWorkType?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
   const submittingRef = useRef(false);
@@ -122,7 +122,7 @@ export default function QuoteForm() {
 
           <div className="formRow">
             <label htmlFor="workType">Type of upholstery work needed</label>
-            <input id="workType" name="workType" type="text" placeholder="e.g. Seat repair, Katzkin leather, headliner" required />
+            <input id="workType" name="workType" type="text" defaultValue={initialWorkType} placeholder="e.g. Seat repair, Katzkin leather, headliner" required />
           </div>
 
           <div className="formRow">
