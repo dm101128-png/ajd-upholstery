@@ -138,7 +138,9 @@ test("C10 follows Bronco under Big Trucks and retains all eight supplied interio
   const { stripTypeScriptTypes } = await import("node:module");
   const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
   const { galleryProjects } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
-  assert.deepEqual(galleryProjects.filter(p => p.category === "Classic Cars").map(p => p.title), ["Volkswagen Beetle"]);
+  assert.deepEqual(galleryProjects.filter(p => p.category === "Classic Cars").map(p => p.title), ["Classic Rolls-Royce", "Volkswagen Beetle"]);
+  assert.equal(galleryProjects.find(p => p.title === "Classic Rolls-Royce").photos.length, 19);
+  assert.equal(galleryProjects.find(p => p.title === "Gray & Black Boat Upholstery").photos.length, 11);
   assert.deepEqual(galleryProjects.filter(p => p.category === "Big Trucks").slice(0,2).map(p => p.title), ["Bronco", "C10"]);
   const c10 = galleryProjects.find(p => p.title === "C10");
   assert.equal(c10.src, "/our-work/big-trucks/c10/cover.jpg");
