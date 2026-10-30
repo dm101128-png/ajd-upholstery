@@ -711,7 +711,6 @@ export const galleryProjects: GalleryItem[] = [
 },
   { ...galleryItems[10], title: "Volkswagen Beetle", category: "Classic Cars", photos: [galleryItems[10]] },
 
-  { ...galleryItems[8], title: "Custom Truck Interior", photos: galleryItems.slice(8, 10) },
   {
   "src": "/our-work/boats/xt-boat/cover.jpg",
   "title": "XT Boat",
