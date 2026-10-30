@@ -273,6 +273,372 @@ const addedGalleryProjects: GalleryItem[] = [
   }
 ];
 
+const addedTruckProjects: GalleryItem[] = [
+  {
+    "src": "/our-work/big-trucks/custom-black-interior/front-and-rear-upholstery.jpg",
+    "title": "Custom Black Truck Interior",
+    "alt": "Black truck seats with chevron-pattern stitching and a matching upholstered center console",
+    "width": 1800,
+    "height": 1350,
+    "category": "Big Trucks",
+    "photos": [
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/front-and-rear-upholstery.jpg",
+        "title": "Coordinated front and rear upholstery",
+        "alt": "Black truck seats with chevron-pattern stitching and a matching upholstered center console",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/passenger-cabin.jpg",
+        "title": "Passenger cabin overview",
+        "alt": "Open passenger door revealing black custom truck seating, dashboard, and center console",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/driver-cabin.jpg",
+        "title": "Driver cabin overview",
+        "alt": "Open driver door of a truck with black custom upholstery and coordinated door trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-bench-overview.jpg",
+        "title": "Rear bench upholstery",
+        "alt": "Black truck rear bench with chevron stitching, matching headrests, and contrast seams",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-cushion-profile.jpg",
+        "title": "Rear cushion profile",
+        "alt": "Side view of the black truck rear bench with patterned seat cushions",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-seat-stitching.jpg",
+        "title": "Rear seat stitching",
+        "alt": "Close view of chevron-pattern stitching across black truck rear seats",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-cabin-wide.jpg",
+        "title": "Rear cabin overview",
+        "alt": "Rear truck cabin with black seat backs, patterned bench upholstery, and matching headrests",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/front-seat-profile.jpg",
+        "title": "Front seat profile",
+        "alt": "Black truck front seats with chevron upholstery panels beside the center console",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/passenger-seat-detail.jpg",
+        "title": "Passenger seat detail",
+        "alt": "Black front passenger seat with chevron stitching and contrasting perimeter seams",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/front-cabin-wide.jpg",
+        "title": "Front cabin details",
+        "alt": "Wide view of the black upholstered truck seats, center console, and dashboard",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-door-in-sunlight.jpg",
+        "title": "Rear door trim in sunlight",
+        "alt": "Black rear truck door panel and upholstered armrest viewed in sunlight",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-door-panel.jpg",
+        "title": "Rear door panel",
+        "alt": "Black rear truck door panel with an upholstered armrest and lower storage pocket",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/door-insert-and-armrest.jpg",
+        "title": "Door insert and armrest",
+        "alt": "Black truck door insert with a stitched armrest and textured trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/door-handle-trim.jpg",
+        "title": "Door handle trim",
+        "alt": "Close view of the truck door handle, dark upholstered insert, and patterned switch trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/driver-door-controls.jpg",
+        "title": "Driver door upholstery",
+        "alt": "Driver door panel with a dark fabric insert, stitched armrest, and window controls",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/open-rear-door.jpg",
+        "title": "Open rear door",
+        "alt": "Full view of a black truck rear door panel with its armrest and red reflector",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/passenger-door-panel.jpg",
+        "title": "Passenger door panel",
+        "alt": "Black passenger door with a dark upholstered insert, stitched armrest, and storage pocket",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/console-and-seat.jpg",
+        "title": "Console and seat coordination",
+        "alt": "Truck center console and dashboard controls alongside a chevron-stitched black seat",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/center-console.jpg",
+        "title": "Upholstered center console",
+        "alt": "Black upholstered center console with contrast stitching between the truck front seats",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/dashboard-stitching.jpg",
+        "title": "Dashboard stitching detail",
+        "alt": "Contrast stitching along the black truck dashboard above the driver air vent",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/steering-wheel-and-dash.jpg",
+        "title": "Steering wheel and dash",
+        "alt": "Stitched black steering wheel and dashboard trim inside the truck",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/driver-dashboard.jpg",
+        "title": "Driver dashboard trim",
+        "alt": "Driver-side dashboard and steering wheel with coordinated black surfaces and stitching",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/passenger-dashboard.jpg",
+        "title": "Passenger dashboard trim",
+        "alt": "Passenger-side view across the truck dashboard, center stack, and console",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/dashboard-overview.jpg",
+        "title": "Dashboard overview",
+        "alt": "Wide view of the black truck dashboard and center controls",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-headliner.jpg",
+        "title": "Rear headliner and seating",
+        "alt": "Dark truck headliner above the black rear bench and rear window",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/front-headliner.jpg",
+        "title": "Front headliner finish",
+        "alt": "Dark textured headliner above the truck front seats",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/roof-trim.jpg",
+        "title": "Roof trim and cabin",
+        "alt": "View upward through the truck cabin showing the dark headliner and overhead trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-roof-detail.jpg",
+        "title": "Rear roof detail",
+        "alt": "Dark headliner and roof trim above the truck rear window and headrests",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-console-switch.jpg",
+        "title": "Rear console detail",
+        "alt": "Close view of a small illuminated switch set into the black rear console panel",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/rear-console-panel.jpg",
+        "title": "Rear console panel",
+        "alt": "Black rear center console panel between the truck front seat backs",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/custom-black-interior/console-switch-detail.jpg",
+        "title": "Console switch close-up",
+        "alt": "Close-up of an illuminated switch in the textured black truck console panel",
+        "width": 1800,
+        "height": 1350
+      }
+    ]
+  },
+  {
+    "src": "/our-work/big-trucks/ram-custom-interior/driver-cabin.jpg",
+    "title": "RAM Custom Interior",
+    "alt": "RAM truck interior with orange and black upholstery, custom steering wheel trim, and coordinated dashboard",
+    "width": 1800,
+    "height": 1350,
+    "category": "Big Trucks",
+    "photos": [
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/driver-cabin.jpg",
+        "title": "Custom RAM driver cabin",
+        "alt": "RAM truck interior with orange and black upholstery, custom steering wheel trim, and coordinated dashboard",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/passenger-cabin.jpg",
+        "title": "Passenger cabin overview",
+        "alt": "Orange and black RAM passenger seat beside matching door, dashboard, and carpet details",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/passenger-seat-and-dash.jpg",
+        "title": "Passenger seat and dashboard",
+        "alt": "RAM passenger cabin with a quilted orange seat insert and orange dashboard panel",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/driver-seat-profile.jpg",
+        "title": "Driver seat profile",
+        "alt": "Side view of the orange and black RAM driver seat with coordinated lower trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/driver-seat-and-wheel.jpg",
+        "title": "Driver seat and steering wheel",
+        "alt": "Quilted orange RAM driver seat beside the wrapped steering wheel and matching dash trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/front-cabin-wide.jpg",
+        "title": "Front cabin overview",
+        "alt": "Wide view of the custom RAM interior with orange seat inserts and black seat bolsters",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/driver-seat-base.jpg",
+        "title": "Driver seat base and footwell",
+        "alt": "Orange upholstered driver seat base and brown carpet in the RAM footwell",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/passenger-footwell.jpg",
+        "title": "Passenger footwell details",
+        "alt": "RAM-branded floor mat beside an orange-trimmed passenger seat base",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/passenger-door-panel.jpg",
+        "title": "Passenger door panel",
+        "alt": "RAM passenger door panel with quilted orange upholstery, matching armrest, and lower trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/passenger-door-detail.jpg",
+        "title": "Passenger door upholstery detail",
+        "alt": "Close view of quilted orange upholstery and coordinated trim on the RAM passenger door",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/driver-door-panel.jpg",
+        "title": "Driver door panel",
+        "alt": "Open RAM driver door with quilted orange upholstery and contrasting black trim",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/open-driver-door.jpg",
+        "title": "Driver door and cabin",
+        "alt": "Exterior view through the open RAM driver door showing coordinated orange and black upholstery",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/ram-dashboard.jpg",
+        "title": "Custom RAM dashboard",
+        "alt": "Orange dashboard trim with raised RAM lettering beside the truck center console",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/center-stack.jpg",
+        "title": "Center stack in sunlight",
+        "alt": "RAM center stack with orange trim and a touchscreen viewed in direct sunlight",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/dashboard-in-sunlight.jpg",
+        "title": "Dashboard finish in sunlight",
+        "alt": "Orange RAM dashboard panel and center stack illuminated by sunlight",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/headliner-and-seats.jpg",
+        "title": "Headliner and seat coordination",
+        "alt": "Orange RAM headliner above matching orange and black front seat upholstery",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/headliner-and-driver-seat.jpg",
+        "title": "Headliner and driver seat",
+        "alt": "Low view of the orange RAM headliner, steering wheel, and coordinated driver seat",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "src": "/our-work/big-trucks/ram-custom-interior/truck-exterior.jpg",
+        "title": "RAM pickup exterior",
+        "alt": "Silver RAM pickup parked outside the upholstery shop",
+        "width": 1800,
+        "height": 1350
+      }
+    ]
+  }
+];
+
 // Keep original photo records intact; group related photos into project buttons.
 export const galleryProjects: GalleryItem[] = [
   ...addedGalleryProjects,
@@ -377,4 +743,5 @@ export const galleryProjects: GalleryItem[] = [
     }
   ]
 },
+  ...addedTruckProjects,
 ];

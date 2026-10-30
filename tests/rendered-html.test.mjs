@@ -141,6 +141,8 @@ test("C10 follows Bronco under Big Trucks and retains all eight supplied interio
   assert.deepEqual(galleryProjects.filter(p => p.category === "Classic Cars").map(p => p.title), ["Classic Rolls-Royce", "Volkswagen Beetle"]);
   assert.equal(galleryProjects.find(p => p.title === "Classic Rolls-Royce").photos.length, 19);
   assert.equal(galleryProjects.find(p => p.title === "Gray & Black Boat Upholstery").photos.length, 11);
+  assert.equal(galleryProjects.find(p => p.title === "Custom Black Truck Interior").photos.length, 31);
+  assert.equal(galleryProjects.find(p => p.title === "RAM Custom Interior").photos.length, 18);
   assert.deepEqual(galleryProjects.filter(p => p.category === "Big Trucks").slice(0,2).map(p => p.title), ["Bronco", "C10"]);
   const c10 = galleryProjects.find(p => p.title === "C10");
   assert.equal(c10.src, "/our-work/big-trucks/c10/cover.jpg");
