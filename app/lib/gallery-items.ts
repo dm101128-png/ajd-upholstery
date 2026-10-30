@@ -42,11 +42,11 @@ export const galleryItems: GalleryItem[] = [
 
 const addedGalleryProjects: GalleryItem[] = [
   {
-    "src": "/our-work/classic-cars/rolls-royce/front-exterior.jpg",
+    "src": "/our-work/classic-cars/rolls-royce/cover.jpg",
     "title": "Classic Rolls-Royce",
-    "alt": "Front view of a silver classic Rolls-Royce with its doors open outside the upholstery shop",
-    "width": 1800,
-    "height": 1350,
+    "alt": "Front view of a white classic Rolls-Royce at sunset with embroidered cream seats visible through the windshield",
+    "width": 1024,
+    "height": 1280,
     "category": "Classic Cars",
     "photos": [
       {
