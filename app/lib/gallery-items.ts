@@ -185,11 +185,11 @@ const addedGalleryProjects: GalleryItem[] = [
     ]
   },
   {
-    "src": "/our-work/boats/gray-black-boat/side-panel-upholstery.jpg",
+    "src": "/our-work/boats/gray-black-boat/cover.jpg",
     "title": "Gray & Black Boat Upholstery",
-    "alt": "Gray and black upholstered side panels fitted inside a white boat during restoration",
-    "width": 1800,
-    "height": 1350,
+    "alt": "White boat with gray and black seating on the water at a marina",
+    "width": 1024,
+    "height": 1280,
     "category": "Boats",
     "photos": [
       {
@@ -502,11 +502,11 @@ const addedTruckProjects: GalleryItem[] = [
     ]
   },
   {
-    "src": "/our-work/big-trucks/ram-custom-interior/driver-cabin.jpg",
+    "src": "/our-work/big-trucks/ram-custom-interior/cover.jpg",
     "title": "RAM Custom Interior",
-    "alt": "RAM truck interior with orange and black upholstery, custom steering wheel trim, and coordinated dashboard",
-    "width": 1800,
-    "height": 1350,
+    "alt": "Silver RAM pickup parked outdoors at sunset",
+    "width": 1024,
+    "height": 1280,
     "category": "Big Trucks",
     "photos": [
       {
