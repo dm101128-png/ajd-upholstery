@@ -100,11 +100,12 @@ test("no page on the site uses a mailto: link for the quote flow", async () => {
   }
 });
 
-test("Our Work starts with five category buttons and no mixed project grid", async () => {
+test("Our Work starts with six category buttons including Classic Cars and no mixed project grid", async () => {
   const worker = await loadWorker();
   const { html } = await get(worker, "/our-work");
-  assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 5);
+  assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 6);
   assert.match(html, /Cars/);
+  assert.match(html, /Classic Cars/);
   assert.match(html, /Boats/);
   assert.match(html, /Big Trucks/);
   assert.match(html, /Roof &amp; Sunroof Repair/);
@@ -137,7 +138,11 @@ test("C10 follows Bronco under Big Trucks and retains all eight supplied interio
   const { stripTypeScriptTypes } = await import("node:module");
   const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
   const { galleryProjects } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
-  assert.deepEqual(galleryProjects.filter(p => p.category === "Cars").map(p => p.title), ["Volkswagen Beetle"]);
+  assert.deepEqual(galleryProjects.filter(p => p.category === "Classic Cars").map(p => p.title), ["Classic Rolls-Royce", "Volkswagen Beetle"]);
+  assert.equal(galleryProjects.find(p => p.title === "Classic Rolls-Royce").photos.length, 19);
+  assert.equal(galleryProjects.find(p => p.title === "Gray & Black Boat Upholstery").photos.length, 11);
+  assert.equal(galleryProjects.find(p => p.title === "Custom Black Truck Interior").photos.length, 31);
+  assert.equal(galleryProjects.find(p => p.title === "RAM Custom Interior").photos.length, 18);
   assert.deepEqual(galleryProjects.filter(p => p.category === "Big Trucks").slice(0,2).map(p => p.title), ["Bronco", "C10"]);
   const c10 = galleryProjects.find(p => p.title === "C10");
   assert.equal(c10.src, "/our-work/big-trucks/c10/cover.jpg");
@@ -153,4 +158,43 @@ test("the home page mentions more than 10 years of experience in prose, not a ba
   const worker = await loadWorker();
   const { html } = await get(worker, "/");
   assert.match(html, /more than 10 years/i);
+});
+
+test("service links on both pages open individual detail pages or the Katzkin page", async () => {
+  const worker = await loadWorker();
+  for (const [path, className, count] of [["/", "serviceTags", 8], ["/services", "section serviceGroups", 20]]) {
+    const { html } = await get(worker, path);
+    const tag = path === "/" ? "ul" : "section";
+    const section = html.match(new RegExp(`<${tag} class="${className}">([\\s\\S]*?)<\\/${tag}>`));
+    assert.ok(section, `expected services on ${path}`);
+    const links = [...section[1].matchAll(/href="([^"]+)"/g)].map(match => match[1]);
+    assert.equal(links.length, count);
+    assert.ok(links.includes("/katzkin"));
+    for (const href of links.filter(href => href !== "/katzkin")) {
+      assert.ok(href.startsWith("/services/"));
+      const { response, html: detail } = await get(worker, href);
+      assert.equal(response.status, 200);
+      assert.match(detail, /Plan your project/);
+      const quoteHref = detail.match(/href="(\/quote\?service=[^"]+)"/)?.[1];
+      assert.ok(quoteHref, `expected a quote link for ${href}`);
+      const service = new URL(quoteHref, "http://localhost").searchParams.get("service");
+      const { html: quote } = await get(worker, quoteHref);
+      const field = quote.match(/<input[^>]*id="workType"[^>]*>/)?.[0];
+      assert.ok(field?.includes(`value="${service.replaceAll("&", "&amp;")}"`), `expected selected service ${service}`);
+    }
+  }
+});
+
+test("unknown services return 404", async () => {
+  const worker = await loadWorker();
+  const { response } = await get(worker, "/services/this-service-does-not-exist");
+  assert.equal(response.status, 404);
+});
+
+test("the footer includes a prominent linked logo at the bottom", async () => {
+  const worker = await loadWorker();
+  const { html } = await get(worker, "/");
+  const bottom = html.match(/<div class="footerBottom">([\s\S]*?)<\/div>/)?.[1];
+  assert.match(bottom ?? "", /<a(?=[^>]*class="footerLogoLink")(?=[^>]*href="\/")[^>]*>/);
+  assert.match(bottom ?? "", /<img(?=[^>]*class="footerLogo")(?=[^>]*alt="AJD Upholstery")[^>]*>/);
 });

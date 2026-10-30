@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   description: "Request a quote from AJD Upholstery for automotive upholstery, repair, restoration, or custom interior work.",
 };
 
-export default function QuotePage() {
+export default async function QuotePage({ searchParams }: { searchParams: Promise<{ service?: string | string[] }> }) {
+  const { service } = await searchParams;
+  const initialWorkType = typeof service === "string" ? service.trim().slice(0, 200) : "";
   return (
     <>
       <section className="section pageHero">
@@ -18,7 +20,7 @@ export default function QuotePage() {
       </section>
 
       <section className="section quoteSection">
-        <QuoteForm />
+        <QuoteForm key={initialWorkType} initialWorkType={initialWorkType} />
       </section>
     </>
   );

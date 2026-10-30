@@ -5,7 +5,7 @@ import { galleryProjects } from "../lib/gallery-items";
 
 export const metadata: Metadata = {
   title: "Our Work | AJD Upholstery",
-  description: "Explore AJD Upholstery projects for cars, boats, big trucks, and roof and sunroof repair.",
+  description: "Explore AJD Upholstery projects for cars, classic cars, boats, big trucks, roof and sunroof repair, and dugout pits. Browse photos grouped by vehicle and project.",
 };
 
 export default function OurWorkPage() {
@@ -15,7 +15,7 @@ export default function OurWorkPage() {
         <p className="eyebrow">Selected work</p>
         <h1>Our Work</h1>
         <p className="pageHeroIntro">
-          A look at some of the interiors we’ve worked on. More photos are added regularly.
+          Explore our upholstery work by category, then open a vehicle or project to see its photos together.
         </p>
       </section>
 

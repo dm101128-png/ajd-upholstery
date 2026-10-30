@@ -68,6 +68,9 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .serviceTags{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 32px;max-width:720px}
 .serviceTags li{font:15px/1.5 Arial;color:var(--text);padding-left:16px;position:relative}
 .serviceTags li:before{content:"–";position:absolute;left:0;color:var(--rust)}
+.serviceTags a{display:inline-block;padding:8px 0;text-decoration:underline;text-underline-offset:4px}
+.serviceTags a:hover,.serviceGroup a:hover{color:var(--rust)}
+.serviceTags a:focus-visible,.serviceGroup a:focus-visible,.footerLogoLink:focus-visible{outline:3px solid var(--rust);outline-offset:4px}
 .workPreview{background:var(--paper)}
 .previewGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
 .previewGrid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
@@ -83,7 +86,18 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .serviceGroups{background:var(--paper);display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
 .serviceGroup h2{font-size:20px}
 .serviceGroup ul{list-style:none;margin:0;padding:0}
-.serviceGroup li{font:15px/1.9 Arial;color:var(--muted);border-top:1px solid var(--line);padding:10px 0}
+.serviceGroup li{font:15px/1.9 Arial;color:var(--muted);border-top:1px solid var(--line)}
+.serviceGroup a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.serviceGroup a span{color:var(--rust)}
+.serviceDetailIntro,.serviceDetail>div,.relatedServices>div{max-width:760px}
+.serviceDetailIntro>.textLink{margin-bottom:28px}
+.serviceDetailIntro .pageHeroIntro{max-width:none;margin-bottom:0}
+.serviceDetail p,.serviceDetail li{font:17px/1.7 Arial;color:var(--muted)}
+.serviceDetail ul{padding-left:22px;margin:24px 0}
+.serviceDetail li{margin:10px 0}
+.serviceWorkLink{margin:24px}
+.relatedServices{background:var(--paper2)}
+.relatedServices ul{list-style:none;padding:0;margin:0;display:grid;gap:20px}
 
 /* Our Story page */
 .storyBody{background:var(--paper);display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:start}
@@ -101,6 +115,7 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .galleryCard{background:none;border:0;padding:0;text-align:left;cursor:pointer}
 .galleryCard img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
 .galleryCaption{display:block;margin-top:10px;font:13px/1.4 Arial;color:var(--muted)}
+.galleryPhotoCount{display:block;margin-top:6px;font:700 12px/1.4 Arial;color:var(--rust)}
 .galleryEmpty{min-height:260px;background:var(--paper2);border-top:3px solid var(--rust);padding:48px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
 .galleryEmpty h2{font-size:24px;margin-bottom:12px}
 .galleryEmpty p{max-width:620px;margin:0;color:var(--muted);font:16px/1.65 Arial}
@@ -182,6 +197,8 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .footerContact a:hover{color:var(--rust)}
 .footerBottom{border-top:1px solid var(--lineDark);padding:20px 24px;text-align:center}
 .footerBottom small{font-size:11px;color:#777}
+.footerLogoLink{display:block;width:160px;margin:0 auto 20px}
+.footerLogo{width:160px;height:160px;object-fit:contain;border-radius:8px}
 
 @media(max-width:900px){
   .previewGrid{grid-template-columns:repeat(2,1fr)}
@@ -219,7 +236,7 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* Category-first project gallery */
-.galleryCategories { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-bottom:36px; }
+.galleryCategories { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-bottom:36px; }
 .galleryCategory { display:flex; flex-direction:column; align-items:flex-start; gap:16px; min-height:210px; padding:26px; border:1px solid #b7a58a; border-radius:12px; background:#f6f1e9; color:#27221c; cursor:pointer; text-align:left; transition:transform .18s,box-shadow .18s; }
 .galleryCategory svg { width:64px; height:64px; }
 .galleryCategory > span { font:inherit; font-size:21px; font-weight:700; }

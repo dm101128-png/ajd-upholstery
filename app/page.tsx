@@ -60,14 +60,18 @@ export default function Home() {
           <p className="eyebrow">What we do</p>
           <h2>Services</h2>
           <ul className="serviceTags">
-            <li>Seat upholstery &amp; repair</li>
-            <li>Katzkin leather interiors</li>
-            <li>Headliners</li>
-            <li>Door panels</li>
-            <li>Custom stitching</li>
-            <li>Classic &amp; hot rod interiors</li>
-            <li>Truck &amp; commercial interiors</li>
-            <li>Full interior restoration</li>
+            {[
+              { title: "Seat upholstery & repair", href: "/services/seat-upholstery" },
+              { title: "Katzkin leather interiors", href: "/katzkin" },
+              { title: "Headliners", href: "/services/headliners" },
+              { title: "Door panels", href: "/services/door-panels" },
+              { title: "Custom stitching", href: "/services/custom-stitching" },
+              { title: "Classic & hot rod interiors", href: "/services/classic-car-interiors" },
+              { title: "Truck & commercial interiors", href: "/services/truck-interiors" },
+              { title: "Full interior restoration", href: "/services/full-interior-restoration" },
+            ].map((service) => (
+              <li key={service.href}><Link href={service.href}>{service.title}</Link></li>
+            ))}
           </ul>
           <Link className="textLink" href="/services">See all services <span>→</span></Link>
         </div>

@@ -1,48 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { services, serviceHref } from "../lib/services";
 
 export const metadata: Metadata = {
   title: "Services | AJD Upholstery",
   description: "Automotive upholstery services from AJD Upholstery — seat repair, custom stitching, Katzkin leather, headliners, and full interior restoration.",
 };
 
-const serviceGroups = [
-  {
-    title: "Seats",
-    items: [
-      "Seat upholstery",
-      "Seat repairs",
-      "Custom seat designs",
-      "Foam repair and seat rebuilding",
-      "Factory-style leather upgrades",
-    ],
-  },
-  {
-    title: "Interior trim",
-    items: [
-      "Headliners",
-      "Sunroof shades",
-      "Door panels",
-      "Carpet installation",
-      "Steering wheel upholstery",
-      "Center consoles",
-      "Armrests",
-    ],
-  },
-  {
-    title: "Custom & specialty",
-    items: [
-      "Custom stitching",
-      "Katzkin leather interiors",
-      "Classic car interiors",
-      "Hot rod interiors",
-      "Truck interiors",
-      "Commercial and specialty vehicle interiors",
-      "Full interior restoration",
-      "Custom automotive upholstery projects",
-    ],
-  },
-];
+const serviceGroups = ["Seats", "Interior trim", "Custom & specialty"] as const;
 
 export default function ServicesPage() {
   return (
@@ -59,11 +24,11 @@ export default function ServicesPage() {
 
       <section className="section serviceGroups">
         {serviceGroups.map((group) => (
-          <div className="serviceGroup" key={group.title}>
-            <h2>{group.title}</h2>
+          <div className="serviceGroup" key={group}>
+            <h2>{group}</h2>
             <ul>
-              {group.items.map((item) => (
-                <li key={item}>{item}</li>
+              {services.filter((item) => item.group === group).map((item) => (
+                <li key={item.slug}><Link href={serviceHref(item)}>{item.title}<span aria-hidden="true"> →</span></Link></li>
               ))}
             </ul>
           </div>
