@@ -646,10 +646,10 @@ export const galleryProjects: GalleryItem[] = [
   {
   "src": "/our-work/big-trucks/c10/cover.jpg",
   "title": "C10",
-  "alt": "Green Chevrolet C10 pickup at sunset",
+  "alt": "Red Chevrolet C10 pickup at a gas station at night",
   "category": "Big Trucks",
-  "width": 960,
-  "height": 472,
+  "width": 1024,
+  "height": 1280,
   "photos": [
     {
       "src": "/our-work/big-trucks/c10/interior-1.jpg",
