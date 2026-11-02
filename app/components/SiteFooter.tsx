@@ -7,7 +7,7 @@ export default function SiteFooter() {
     <footer className="siteFooter">
       <div className="footerTop">
         <Link className="brand footerBrand" href="/" aria-label="AJD Upholstery home">
-          <Image className="brandLogo" src="/ajd-logo.jpg" alt="AJD Upholstery" width={44} height={44} />
+          <Image className="brandLogo" src="/ajd-logo.jpg" alt="AJD Upholstery" width={44} height={44} unoptimized />
           <span className="brandWords">AJD Upholstery</span>
         </Link>
 
