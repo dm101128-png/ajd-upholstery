@@ -249,3 +249,9 @@ h2{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.3px;
 .galleryPrompt { text-align:center; padding:18px 0; }
 @media(max-width:900px) { .galleryCategories { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:480px) { .galleryCategories { gap:10px; } .galleryCategory { padding:16px; min-height:190px; } .galleryCategory > span { font-size:18px; } .galleryProjectHeading { align-items:flex-start; flex-direction:column; } }
+
+
+/* Footer contact links */
+.footerSocialLinks{display:flex;flex-direction:column;gap:10px;margin-top:10px;padding-top:18px;border-top:1px solid var(--lineDark)}
+.footerSocialLinks a{display:flex;flex-direction:column;gap:3px;overflow-wrap:anywhere}
+.footerSocialLabel{color:var(--rust);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:1px}
