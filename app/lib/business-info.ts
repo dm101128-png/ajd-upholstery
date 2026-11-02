@@ -8,12 +8,12 @@
 export const businessInfo = {
   name: "AJD Upholstery",
   tagline: "Quality automotive upholstery",
+  email: "ajd.david.upholstery@gmail.com",
   phone: "214-489-1200",
   address: "601 North Beltline, Suite 180, Irving, Texas",
-  // PLACEHOLDER: no social links found in the repo.
   social: {
-    instagram: null as string | null,
-    facebook: null as string | null,
+    instagram: "https://www.instagram.com/ajd_upholstery_custom_interior/",
+    facebook: "https://www.facebook.com/share/1e5owcpHB9/?mibextid=wwXIfr",
   },
   experienceYears: "10+",
 };
