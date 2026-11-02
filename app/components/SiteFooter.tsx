@@ -17,10 +17,21 @@ export default function SiteFooter() {
           ))}
         </nav>
 
-        {(businessInfo.phone || businessInfo.address) && <div className="footerContact">
+        <div className="footerContact">
+          <a href={`mailto:${businessInfo.email}`}>{businessInfo.email}</a>
           {businessInfo.phone && <a href={`tel:${businessInfo.phone}`}>{businessInfo.phone}</a>}
           {businessInfo.address && <span>{businessInfo.address}</span>}
-        </div>}
+          <div className="footerSocialLinks" aria-label="AJD Upholstery social media">
+            <a href={businessInfo.social.instagram} target="_blank" rel="noreferrer">
+              <span className="footerSocialLabel">Instagram</span>
+              <span>@ajd_upholstery_custom_interior</span>
+            </a>
+            <a href={businessInfo.social.facebook} target="_blank" rel="noreferrer">
+              <span className="footerSocialLabel">Facebook</span>
+              <span>AJD Upholstery</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="footerBottom">
