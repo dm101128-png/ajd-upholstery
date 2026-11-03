@@ -91,14 +91,15 @@ export default function Home() {
       <section className="section storyPreview">
         <Image className="storyPreviewImg" src="/shop-supply-cabinet.png" alt="Materials and supplies inside the AJD Upholstery shop" width={1086} height={1448} />
         <div className="storyPreviewText">
-          <p className="eyebrow">A family business</p>
-          <h2>Built by hand, for more than 10 years</h2>
+          <p className="eyebrow">Our team</p>
+          <h2>Your vision. Our craftsmanship.</h2>
           <p>
-            Jacinto started AJD Upholstery from a small shop, and his sons grew up around
-            the work — learning the craft alongside him. Today the family runs the business
-            together, combining hands-on experience with a plan for where it&rsquo;s headed next.
+            We are a team of creative, hands-on craftspeople who design upholstery around
+            you. From clean, timeless interiors to bold custom designs, we take on the
+            ideas that seem unthinkable and work together to bring them to life. We are
+            here to listen, guide you through the options, and help every detail feel right.
           </p>
-          <Link className="textLink" href="/our-story">Read our story <span>→</span></Link>
+          <Link className="textLink" href="/our-story">Meet our team <span>→</span></Link>
         </div>
       </section>
 

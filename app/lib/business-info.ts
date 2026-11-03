@@ -21,7 +21,7 @@ export const businessInfo = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/our-story", label: "Our Story" },
+  { href: "/our-story", label: "Our Team" },
   { href: "/our-work", label: "Our Work" },
   { href: "/katzkin", label: "Katzkin" },
   { href: "/quote", label: "Get a Quote" },
