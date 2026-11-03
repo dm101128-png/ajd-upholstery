@@ -23,7 +23,7 @@ async function get(worker, path) {
 const routes = [
   { path: "/", heading: "Built to Last" },
   { path: "/services", heading: "Services" },
-  { path: "/our-story", heading: "A Family Business Built by Hand" },
+  { path: "/our-story", heading: "Your Vision\\. Our Craftsmanship\\." },
   { path: "/our-work", heading: "Our Work" },
   { path: "/katzkin", heading: "Katzkin Leather Interiors" },
   { path: "/quote", heading: "Get a Quote" },

@@ -1,46 +1,46 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PhotoPlaceholder from "../components/PhotoPlaceholder";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Our Story | AJD Upholstery",
-  description: "AJD Upholstery is a family business built by hand over more than 10 years, now run by Jacinto and his sons.",
+  title: "Our Team | AJD Upholstery",
+  description: "Meet the AJD Upholstery team: creative craftspeople bringing bold custom upholstery designs to life, with personal guidance from idea to finished interior.",
 };
 
-export default function OurStoryPage() {
+export default function OurTeamPage() {
   return (
     <>
       <section className="section pageHero">
-        <p className="eyebrow">A family craft</p>
-        <h1>A Family Business Built by Hand</h1>
+        <p className="eyebrow">Our team</p>
+        <h1>Your Vision. Our Craftsmanship.</h1>
       </section>
 
       <section className="section storyBody">
         <div className="storyBodyText">
           <p>
-            Jacinto has spent more than 10 years working out of his own small upholstery shop,
-            building AJD Upholstery one project at a time. There was no shortcut to it — just
-            hands-on craftsmanship, showing up consistently, and taking care with every seat,
-            panel, and interior that came through the door.
+            At AJD Upholstery, we are a team of creative, hands-on craftspeople with a shared
+            passion for thoughtful design and quality upholstery. We work together to create
+            interiors that fit your style, your vehicle, and the way you use it — with care
+            in every material, stitch, and finishing detail.
           </p>
           <p>
-            His sons grew up around the shop. They were raised watching and learning the
-            business firsthand — the materials, the stitching, the way a job gets done right,
-            and what it takes to take care of a customer. That time in the shop turned into
-            real experience, not just something they picked up from the sidelines.
+            Bring us the idea that seems unthinkable. From a timeless restoration to a bold,
+            one-of-a-kind interior, we love a creative challenge. Our team helps shape your
+            vision, explores materials and design possibilities, and finds thoughtful ways
+            to bring it all together.
           </p>
           <p>
-            Today, Jacinto’s sons are helping him grow the business further, bringing their
-            own part to the table — organization, marketing, and a vision for where AJD
-            Upholstery can go next — alongside the craftsmanship Jacinto has spent over a
-            decade building.
+            We are here to help you every step of the way. Whether you know exactly what you
+            want or need a little inspiration, we listen, answer your questions, and guide
+            you through colors, textures, stitching, and practical choices. Your ideas are
+            at the heart of the process, from our first conversation to the finished upholstery.
           </p>
         </div>
-        <PhotoPlaceholder label="Family / workshop photo — to be added" className="storyBodyPhoto" />
+        <Image className="storyPreviewImg" src="/shop-bench-work.png" alt="Upholstery work inside the AJD Upholstery workshop" width={1086} height={1448} />
       </section>
 
       <section className="section finalCta">
-        <h2>Let’s Get It Ready for the Road.</h2>
+        <h2>Let’s Bring Your Ideas to Life.</h2>
         <Link className="button primary" href="/quote">Get a Quote</Link>
       </section>
     </>
