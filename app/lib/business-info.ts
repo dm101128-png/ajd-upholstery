@@ -8,7 +8,7 @@
 export const businessInfo = {
   name: "AJD Upholstery",
   tagline: "Quality automotive upholstery",
-  email: "ajd.david.upholstery@gmail.com",
+  email: "ajd.upholstery@gmail.com",
   phone: "214-489-1200",
   address: "601 North Beltline, Suite 180, Irving, Texas",
   social: {
