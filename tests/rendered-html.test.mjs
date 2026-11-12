@@ -104,7 +104,8 @@ test("Our Work starts with six category buttons including Classic Cars and no mi
   const worker = await loadWorker();
   const { html } = await get(worker, "/our-work");
   assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 6);
-  assert.match(html, /Cars/);
+  assert.match(html, /<span>Custom Seats<\/span>/);
+  assert.doesNotMatch(html, /<span>Cars<\/span>/);
   assert.match(html, /Classic Cars/);
   assert.match(html, /Boats/);
   assert.match(html, /Big Trucks/);

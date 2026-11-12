@@ -1,4 +1,4 @@
-export const galleryCategories = ["Cars", "Classic Cars", "Boats", "Big Trucks", "Roof & Sunroof Repair", "Dugout Pits"] as const;
+export const galleryCategories = ["Custom Seats", "Classic Cars", "Boats", "Big Trucks", "Roof & Sunroof Repair", "Dugout Pits"] as const;
 
 export type GalleryCategory = (typeof galleryCategories)[number];
 
@@ -34,7 +34,7 @@ export const galleryItems: GalleryItem[] = [
   { src: "/our-work/green-squarebody/passenger-cabin.jpg", alt: "Passenger-side view of a complete brown leather interior in a green classic truck", title: "Coordinated cabin details", category: "Big Trucks", width: 1280, height: 960 },
   { src: "/work-interior.png", alt: "Custom two-tone leather bucket seats and dash trim", title: "Custom truck interior", category: "Big Trucks", width: 1448, height: 1086 },
   { src: "/work-door-panel.png", alt: "Custom stitched leather door panel", title: "Custom truck door panel", category: "Big Trucks", width: 1448, height: 1086 },
-  { src: "/work-vw-restoration.png", alt: "Classic Volkswagen Beetle interior restoration", title: "Classic restoration", category: "Cars", width: 1086, height: 1448 },
+  { src: "/work-vw-restoration.png", alt: "Classic Volkswagen Beetle interior restoration", title: "Classic restoration", category: "Classic Cars", width: 1086, height: 1448 },
   { src: "/shop-fabric-wall.png", alt: "Wall of leather and vinyl rolls in the AJD Upholstery shop", title: "Material selection", category: null, width: 1448, height: 1086 },
   { src: "/shop-bench-work.png", alt: "AJD Upholstery hand-stitching a seat in the shop", title: "In the shop", category: null, width: 1086, height: 1448 },
   { src: "/shop-supply-cabinet.png", alt: "Dyes, adhesives, and finishing supplies in the AJD Upholstery shop", title: "Shop supplies", category: null, width: 1086, height: 1448 },
@@ -641,6 +641,21 @@ const addedTruckProjects: GalleryItem[] = [
 
 // Keep original photo records intact; group related photos into project buttons.
 export const galleryProjects: GalleryItem[] = [
+  {
+    src: "/our-work/custom-seats/blue-white-bench/front-view.jpg",
+    alt: "Custom blue and white bench seat with vertical pleats and double-stitched trim",
+    title: "Blue & White Bench Seat",
+    category: "Custom Seats",
+    width: 1600,
+    height: 900,
+    photos: [
+      { src: "/our-work/custom-seats/blue-white-bench/stitching-detail.jpg", alt: "Close-up of blue pleated upholstery and double stitching on the white bench-seat edge", title: "Stitching detail", width: 1600, height: 900 },
+      { src: "/our-work/custom-seats/blue-white-bench/front-view.jpg", alt: "Front view of the complete blue and white custom bench seat", title: "Complete bench seat", width: 1600, height: 900 },
+      { src: "/our-work/custom-seats/blue-white-bench/upper-view.jpg", alt: "Elevated view of the blue pleated seat cushion and backrest with white borders", title: "Pleated seat and backrest", width: 1600, height: 900 },
+      { src: "/our-work/custom-seats/blue-white-bench/angled-view.jpg", alt: "Angled view of the blue and white bench seat showing its shaped cushion and stitched trim", title: "Custom seat profile", width: 1600, height: 900 },
+      { src: "/our-work/custom-seats/blue-white-bench/side-view.jpg", alt: "Side view of the blue and white bench seat with pleated upholstery and rounded white trim", title: "Side and trim detail", width: 900, height: 1600 },
+    ],
+  },
   ...addedGalleryProjects,
   galleryItems[0],
   {

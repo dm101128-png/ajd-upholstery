@@ -5,7 +5,7 @@ import { galleryProjects } from "../lib/gallery-items";
 
 export const metadata: Metadata = {
   title: "Our Work | AJD Upholstery",
-  description: "Explore AJD Upholstery projects for cars, classic cars, boats, big trucks, roof and sunroof repair, and dugout pits. Browse photos grouped by vehicle and project.",
+  description: "Explore AJD Upholstery projects for custom seats, classic cars, boats, big trucks, roof and sunroof repair, and dugout pits. Browse photos grouped by vehicle and project.",
 };
 
 export default function OurWorkPage() {

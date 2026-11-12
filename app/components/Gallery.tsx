@@ -13,7 +13,7 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
 
-  const filtered = items.filter((i) => i.category === active || (active === "Cars" && i.category === "Classic Cars"));
+  const filtered = items.filter((i) => i.category === active);
   const openItem = openIndex !== null ? filtered[openIndex] : null;
   const photos = openItem ? (openItem.photos?.length ? openItem.photos : [openItem]) : [];
   const openPhoto = photos[photoIndex];
@@ -73,7 +73,8 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
             className={`galleryCategory${active === cat ? " galleryCategoryActive" : ""}`}
             onClick={() => { setActive(cat); setOpenIndex(null); setPhotoIndex(0); }}>
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              {(cat === "Cars" || cat === "Classic Cars") && <><path d="M5 41v-8l11-3 9-11h15l10 11 9 3v8h-6M11 41H5m18 0h18M18 30h29M25 23l-5 7m12-11v11m8-7 6 7M6 35h5m43 0h4M35 34h5"/><circle cx="17" cy="41" r="6"/><circle cx="47" cy="41" r="6"/><circle cx="17" cy="41" r="2"/><circle cx="47" cy="41" r="2"/></>}
+              {cat === "Custom Seats" && <><rect x="12" y="10" width="40" height="28" rx="6"/><path d="M12 34 7 45v5h50v-5l-5-11M7 45h50M15 50v6m34-6v6M22 16v22m10-22v22m10-22v22"/></>}
+              {cat === "Classic Cars" && <><path d="M5 41v-8l11-3 9-11h15l10 11 9 3v8h-6M11 41H5m18 0h18M18 30h29M25 23l-5 7m12-11v11m8-7 6 7M6 35h5m43 0h4M35 34h5"/><circle cx="17" cy="41" r="6"/><circle cx="47" cy="41" r="6"/><circle cx="17" cy="41" r="2"/><circle cx="47" cy="41" r="2"/></>}
               {cat === "Boats" && <><path d="M8 37h48L46 49H20L8 37Zm14 0V26h21l6 11M29 26V15h10v11M7 54q6-6 12 0t12 0 12 0 12 0"/></>}
               {cat === "Big Trucks" && <><path d="M4 28h24V17h14l7 14h10v11h-6M4 28v14h6m12 0h19M28 28v14M32 21h7l5 10H32V21Zm-28 6h24M33 35h4m18 0h4"/><circle cx="16" cy="42" r="6"/><circle cx="47" cy="42" r="6"/><circle cx="16" cy="42" r="2"/><circle cx="47" cy="42" r="2"/></>}
               {cat === "Roof & Sunroof Repair" && <><path d="M24 5h16c6 0 9 5 9 11v32c0 7-3 11-9 11H24c-6 0-9-4-9-11V16c0-6 3-11 9-11ZM20 17l3 7h18l3-7M20 47l3-6h18l3 6M10 21h5m34 0h5M19 27v11m26-11v11"/><rect x="23" y="28" width="18" height="10" rx="2"/><path d="m28 35 7-4"/></>}
