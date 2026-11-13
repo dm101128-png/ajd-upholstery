@@ -100,16 +100,19 @@ test("no page on the site uses a mailto: link for the quote flow", async () => {
   }
 });
 
-test("Our Work starts with six category buttons including Classic Cars and no mixed project grid", async () => {
+test("Our Work links to five category pages without expanding photos below", async () => {
   const worker = await loadWorker();
   const { html } = await get(worker, "/our-work");
-  assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 6);
+  assert.equal([...html.matchAll(/class="galleryCategory"/g)].length, 5);
   assert.match(html, /<span>Custom Seats<\/span>/);
   assert.doesNotMatch(html, /<span>Cars<\/span>/);
   assert.match(html, /Classic Cars/);
   assert.match(html, /Boats/);
   assert.match(html, /Big Trucks/);
-  assert.match(html, /Roof &amp; Sunroof Repair/);
+  assert.doesNotMatch(html, /Roof.{0,10}Sunroof Repair/i);
+  for (const slug of ["custom-seats", "classic-cars", "boats", "big-trucks", "dugout-pits"]) {
+    assert.match(html, new RegExp(`href="/our-work/${slug}"`));
+  }
   assert.match(html, /Dugout Pits/);
   assert.doesNotMatch(html, /class="galleryCard"/);
   assert.doesNotMatch(html, /class="lightbox"/);
@@ -198,4 +201,42 @@ test("the footer includes a prominent linked logo at the bottom", async () => {
   const bottom = html.match(/<div class="footerBottom">([\s\S]*?)<\/div>/)?.[1];
   assert.match(bottom ?? "", /<a(?=[^>]*class="footerLogoLink")(?=[^>]*href="\/")[^>]*>/);
   assert.match(bottom ?? "", /<img(?=[^>]*class="footerLogo")(?=[^>]*alt="AJD Upholstery")[^>]*>/);
+});
+
+
+test("category pages link to project pages that load directly with their photos", async () => {
+  const worker = await loadWorker();
+  for (const category of ["custom-seats", "classic-cars", "boats", "big-trucks", "dugout-pits"]) {
+    const { response, html } = await get(worker, `/our-work/${category}`);
+    assert.equal(response.status, 200);
+    assert.match(html, /href="\/our-work"/);
+    const links = [...html.matchAll(new RegExp(`href="(/our-work/${category}/[a-z0-9-]+)"`, "g"))].map(match => match[1]);
+    if (category !== "dugout-pits") assert.ok(links.length, `expected project links for ${category}`);
+    for (const href of links) {
+      const { response: projectResponse, html: projectHtml } = await get(worker, href);
+      assert.equal(projectResponse.status, 200, href);
+      assert.match(projectHtml, new RegExp(`href="/our-work/${category}"`));
+      assert.match(projectHtml, /View larger image:/);
+      assert.match(projectHtml, /class="galleryGrid"/);
+    }
+  }
+});
+
+test("new boat and Mercedes projects include all unique photos and the boat video", async () => {
+  const worker = await loadWorker();
+  const { html: boat } = await get(worker, "/our-work/boats/red-white-black-boat-upholstery");
+  assert.equal([...boat.matchAll(/class="galleryCard"/g)].length, 6);
+  assert.match(boat, /<video[^>]*controls/);
+  assert.match(boat, /preload="none"/);
+  assert.match(boat, /walkthrough.mp4/);
+  assert.doesNotMatch(boat, /<video[^>]*autoPlay/i);
+  const { html: mercedes } = await get(worker, "/our-work/custom-seats/mercedes-seats");
+  assert.equal([...mercedes.matchAll(/class="galleryCard"/g)].length, 5);
+});
+
+test("removed, unknown, and mismatched gallery routes return 404", async () => {
+  const worker = await loadWorker();
+  for (const path of ["/our-work/roof-sunroof-repair", "/our-work/unknown", "/our-work/boats/unknown", "/our-work/boats/mercedes-seats"]) {
+    assert.equal((await get(worker, path)).response.status, 404, path);
+  }
 });
