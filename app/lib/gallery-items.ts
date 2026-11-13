@@ -1,4 +1,4 @@
-export const galleryCategories = ["Custom Seats", "Classic Cars", "Boats", "Big Trucks", "Roof & Sunroof Repair", "Dugout Pits"] as const;
+export const galleryCategories = ["Custom Seats", "Classic Cars", "Boats", "Big Trucks", "Dugout Pits"] as const;
 
 export type GalleryCategory = (typeof galleryCategories)[number];
 
@@ -14,6 +14,7 @@ export interface GalleryItem extends GalleryPhoto {
   category: GalleryCategory | null;
   // A project card uses its own cover and opens these detail photos in order.
   photos?: GalleryPhoto[];
+  video?: { src: string; poster: string; title: string };
 }
 
 export const galleryItems: GalleryItem[] = [
@@ -641,6 +642,104 @@ const addedTruckProjects: GalleryItem[] = [
 
 // Keep original photo records intact; group related photos into project buttons.
 export const galleryProjects: GalleryItem[] = [
+{
+  "src": "/our-work/boats/red-white-black-boat/full-interior.jpg",
+  "title": "Red, White & Black Boat Upholstery",
+  video: { src: "/our-work/boats/red-white-black-boat/walkthrough.mp4", poster: "/our-work/boats/red-white-black-boat/full-interior.jpg", title: "Boat interior walkthrough" },
+  "alt": "White, black, and red boat upholstery with diamond-stitched rear console and red carpet",
+  "width": 963,
+  "height": 1280,
+  "category": "Boats",
+  "photos": [
+    {
+      "src": "/our-work/boats/red-white-black-boat/captain-seat.jpg",
+      "title": "Diamond-stitched captain’s seat",
+      "alt": "White and black boat captain’s seat with red diamond stitching",
+      "width": 963,
+      "height": 1280
+    },
+    {
+      "src": "/our-work/boats/red-white-black-boat/cockpit-seat.jpg",
+      "title": "Cockpit seating",
+      "alt": "Custom white and black boat seat beside red carpet and matching rear seating",
+      "width": 963,
+      "height": 1280
+    },
+    {
+      "src": "/our-work/boats/red-white-black-boat/bow-detail.jpg",
+      "title": "Bow seating detail",
+      "alt": "White and black bow cushions with red trim and stainless cup holders",
+      "width": 963,
+      "height": 1280
+    },
+    {
+      "src": "/our-work/boats/red-white-black-boat/bow-seating.jpg",
+      "title": "Complete bow seating",
+      "alt": "Matching white and black bow seating around the red-carpeted walkway",
+      "width": 963,
+      "height": 1280
+    },
+    {
+      "src": "/our-work/boats/red-white-black-boat/boat-cover.jpg",
+      "title": "Fitted boat cover",
+      "alt": "Red fitted boat cover above the black and red patterned swim platform",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "src": "/our-work/boats/red-white-black-boat/full-interior.jpg",
+      "title": "Complete boat interior",
+      "alt": "White, black, and red boat upholstery with diamond-stitched rear console and red carpet",
+      "width": 963,
+      "height": 1280
+    }
+  ]
+},
+{
+  "src": "/our-work/custom-seats/mercedes-seats/seat-4.jpg",
+  "title": "Mercedes Seats",
+  "alt": "Mercedes seat upholstery with black bolsters, black and white patterned inserts, and contrast stitching",
+  "width": 900,
+  "height": 1600,
+  "category": "Custom Seats",
+  "photos": [
+    {
+      "src": "/our-work/custom-seats/mercedes-seats/seat-1.jpg",
+      "title": "Passenger seat",
+      "alt": "Mercedes seat upholstery with black bolsters, black and white patterned inserts, and contrast stitching",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/our-work/custom-seats/mercedes-seats/seat-2.jpg",
+      "title": "Patterned seat insert",
+      "alt": "Mercedes seat upholstery with black bolsters, black and white patterned inserts, and contrast stitching",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/our-work/custom-seats/mercedes-seats/seat-3.jpg",
+      "title": "Front seat upholstery",
+      "alt": "Mercedes seat upholstery with black bolsters, black and white patterned inserts, and contrast stitching",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/our-work/custom-seats/mercedes-seats/seat-4.jpg",
+      "title": "Matching front seats",
+      "alt": "Mercedes seat upholstery with black bolsters, black and white patterned inserts, and contrast stitching",
+      "width": 900,
+      "height": 1600
+    },
+    {
+      "src": "/our-work/custom-seats/mercedes-seats/seat-5.jpg",
+      "title": "Seat and stitching detail",
+      "alt": "Mercedes seat upholstery with black bolsters, black and white patterned inserts, and contrast stitching",
+      "width": 900,
+      "height": 1600
+    }
+  ]
+},
   {
     src: "/our-work/custom-seats/blue-white-bench/front-view.jpg",
     alt: "Custom blue and white bench seat with vertical pleats and double-stitched trim",
@@ -759,3 +858,19 @@ export const galleryProjects: GalleryItem[] = [
 },
   ...addedTruckProjects,
 ];
+
+export function categorySlug(category: GalleryCategory) {
+  return category.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
+export function categoryHref(category: GalleryCategory) {
+  return `/our-work/${categorySlug(category)}`;
+}
+
+export function projectSlug(project: GalleryItem) {
+  return project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+export function projectHref(project: GalleryItem) {
+  return `${categoryHref(project.category!)}/${projectSlug(project)}`;
+}

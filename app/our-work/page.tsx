@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Gallery from "../components/Gallery";
-import { galleryProjects } from "../lib/gallery-items";
+import GalleryCategories from "../components/GalleryCategories";
 
 export const metadata: Metadata = {
   title: "Our Work | AJD Upholstery",
-  description: "Explore AJD Upholstery projects for custom seats, classic cars, boats, big trucks, roof and sunroof repair, and dugout pits. Browse photos grouped by vehicle and project.",
+  description: "Explore AJD Upholstery projects for custom seats, classic cars, boats, big trucks, and dugout pits. Browse photos grouped by vehicle and project.",
 };
 
 export default function OurWorkPage() {
@@ -20,7 +19,7 @@ export default function OurWorkPage() {
       </section>
 
       <section className="section gallerySection">
-        <Gallery items={galleryProjects} />
+        <GalleryCategories />
       </section>
 
       <section className="section finalCta">
