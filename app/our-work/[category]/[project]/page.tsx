@@ -24,6 +24,7 @@ export default async function ProjectPage({ params }: Props) {
   const project = findProject(await params);
   if (!project || !project.category) notFound();
   const photos = project.photos?.length ? project.photos : [project];
+  const videos = project.videos ?? (project.video ? [project.video] : []);
 
   return <>
     <section className="section pageHero">
@@ -33,13 +34,13 @@ export default async function ProjectPage({ params }: Props) {
       <p className="pageHeroIntro">Explore the details. Select any photo for a closer look.</p>
     </section>
     <section className="section gallerySection" aria-label={`${project.title} photos and video`}>
-      {project.video && <figure className="projectVideo">
-        <video controls playsInline preload="none" poster={project.video.poster} aria-label={project.video.title}>
-          <source src={project.video.src} type="video/mp4" />
-          Your browser does not support this video. <a href={project.video.src}>Download the video</a>.
+      {videos.map(video => <figure className="projectVideo" key={video.src}>
+        <video controls playsInline preload="none" poster={video.poster} aria-label={video.title}>
+          <source src={video.src} type="video/mp4" />
+          Your browser does not support this video. <a href={video.src}>Download the video</a>.
         </video>
-        <figcaption>{project.video.title}</figcaption>
-      </figure>}
+        <figcaption>{video.title}</figcaption>
+      </figure>)}
       <Gallery items={photos} />
     </section>
     <section className="section finalCta">
