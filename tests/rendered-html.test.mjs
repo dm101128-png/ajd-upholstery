@@ -142,7 +142,7 @@ test("C10 follows Bronco under Big Trucks and retains all eight supplied interio
   const { stripTypeScriptTypes } = await import("node:module");
   const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
   const { galleryProjects } = await import(`data:text/javascript;base64,${Buffer.from(stripTypeScriptTypes(source)).toString("base64")}`);
-  assert.deepEqual(galleryProjects.filter(p => p.category === "Classic Cars").map(p => p.title), ["Classic Rolls-Royce", "Volkswagen Beetle", "VW Bochito"]);
+  assert.deepEqual(galleryProjects.filter(p => p.category === "Classic Cars").map(p => p.title), ["Classic Rolls-Royce", "Volkswagen Beetle", "VW Bochito", "Corvette Red Interior"]);
   assert.equal(galleryProjects.find(p => p.title === "Classic Rolls-Royce").photos.length, 19);
   assert.equal(galleryProjects.find(p => p.title === "Gray & Black Boat Upholstery").photos.length, 11);
   assert.equal(galleryProjects.find(p => p.title === "Custom Black Truck Interior").photos.length, 31);
@@ -241,7 +241,7 @@ test("removed, unknown, and mismatched gallery routes return 404", async () => {
   }
 });
 
-test("the four supplied projects retain every photo and video in their selected categories", async () => {
+test("the supplied projects retain every photo and video in their selected categories", async () => {
   const { readFile } = await import("node:fs/promises");
   const { stripTypeScriptTypes } = await import("node:module");
   const source = await readFile(new URL("../app/lib/gallery-items.ts", import.meta.url), "utf8");
@@ -252,6 +252,7 @@ test("the four supplied projects retain every photo and video in their selected 
     ["Jet Ski", "Boats", "boats/jet-ski", 6, 2],
     ["Trailer Seats", "Custom Seats", "custom-seats/trailer-seats", 3, 0],
     ["Jeep Grand Cherokee", "Custom Seats", "custom-seats/jeep-grand-cherokee", 3, 2],
+    ["Corvette Red Interior", "Classic Cars", "classic-cars/corvette-red-interior", 4, 0],
   ]) {
     const project = galleryProjects.find(item => item.title === title);
     assert.ok(project, `missing project: ${title}`);

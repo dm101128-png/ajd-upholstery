@@ -1054,6 +1054,44 @@ export const galleryProjects: GalleryItem[] = [
       }
     ]
   },
+  {
+    src: "/our-work/classic-cars/corvette-red-interior/cover.jpg",
+    title: "Corvette Red Interior",
+    alt: "Red Corvette door upholstery with black inserts, chrome trim, and matching red carpet",
+    width: 4096,
+    height: 2304,
+    category: "Classic Cars",
+    photos: [
+      {
+        src: "/our-work/classic-cars/corvette-red-interior/cover.jpg",
+        title: "Red door panel",
+        alt: "Red Corvette door upholstery with black inserts, chrome trim, and matching red carpet",
+        width: 4096,
+        height: 2304,
+      },
+      {
+        src: "/our-work/classic-cars/corvette-red-interior/dashboard.jpg",
+        title: "Passenger dashboard",
+        alt: "Red Corvette passenger dashboard with a stitched storage pocket and round air vent",
+        width: 4096,
+        height: 2304,
+      },
+      {
+        src: "/our-work/classic-cars/corvette-red-interior/seat-detail.jpg",
+        title: "Seat stitching detail",
+        alt: "Close view of red Corvette seat upholstery with horizontal stitched panels and matching piping",
+        width: 2304,
+        height: 4096,
+      },
+      {
+        src: "/our-work/classic-cars/corvette-red-interior/seats-and-console.jpg",
+        title: "Seats and center console",
+        alt: "Red Corvette seats and upholstered center console with a matching red shifter boot",
+        width: 4096,
+        height: 2304,
+      },
+    ],
+  },
 ];
 
 export function categorySlug(category: GalleryCategory) {
