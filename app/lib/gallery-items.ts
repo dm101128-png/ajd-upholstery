@@ -10,11 +10,18 @@ export interface GalleryPhoto {
   height: number;
 }
 
+export interface GalleryVideo {
+  src: string;
+  poster: string;
+  title: string;
+}
+
 export interface GalleryItem extends GalleryPhoto {
   category: GalleryCategory | null;
   // A project card uses its own cover and opens these detail photos in order.
   photos?: GalleryPhoto[];
-  video?: { src: string; poster: string; title: string };
+  video?: GalleryVideo;
+  videos?: GalleryVideo[];
 }
 
 export const galleryItems: GalleryItem[] = [
@@ -857,6 +864,196 @@ export const galleryProjects: GalleryItem[] = [
   ]
 },
   ...addedTruckProjects,
+  {
+    "src": "/our-work/classic-cars/vw-bochito/cover.jpg",
+    "title": "VW Bochito",
+    "alt": "Pair of VW Bochito seats with black diamond-stitched centers and white side bolsters",
+    "width": 900,
+    "height": 1600,
+    "category": "Classic Cars",
+    "photos": [
+      {
+        "src": "/our-work/classic-cars/vw-bochito/cover.jpg",
+        "title": "Black and white seat pair",
+        "alt": "Pair of VW Bochito seats with black diamond-stitched centers and white side bolsters",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/classic-cars/vw-bochito/front-seat.jpg",
+        "title": "Front seat upholstery",
+        "alt": "Front view of a VW Bochito seat with black diamond stitching and white trim",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/classic-cars/vw-bochito/seat-profile.jpg",
+        "title": "Seat profile",
+        "alt": "Angled view of the VW Bochito black and white seat upholstery",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/classic-cars/vw-bochito/diamond-stitching.jpg",
+        "title": "Diamond stitching detail",
+        "alt": "VW Bochito seat cushions and backs with contrasting diamond stitching",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/classic-cars/vw-bochito/finished-seat-pair.jpg",
+        "title": "Finished seat pair",
+        "alt": "Side view of the matching black and white VW Bochito seats",
+        "width": 900,
+        "height": 1600
+      }
+    ],
+    "videos": [
+      {
+        "src": "/our-work/classic-cars/vw-bochito/video-01.mp4",
+        "poster": "/our-work/classic-cars/vw-bochito/cover.jpg",
+        "title": "VW Bochito upholstery video"
+      }
+    ]
+  },
+  {
+    "src": "/our-work/boats/jet-ski/cover.jpg",
+    "title": "Jet Ski",
+    "alt": "White jet ski seats with black and red accent panels and decorative stitching",
+    "width": 1600,
+    "height": 900,
+    "category": "Boats",
+    "photos": [
+      {
+        "src": "/our-work/boats/jet-ski/cover.jpg",
+        "title": "Jet ski seat upholstery",
+        "alt": "White jet ski seats with black and red accent panels and decorative stitching",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/our-work/boats/jet-ski/complete-seat-pair.jpg",
+        "title": "Complete jet ski seat pair",
+        "alt": "Overhead view of the two custom jet ski seat covers on the workbench",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/our-work/boats/jet-ski/workshop-seats.jpg",
+        "title": "Seats in the workshop",
+        "alt": "Custom white jet ski upholstery with contrasting panels in the AJD workshop",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/boats/jet-ski/seat-profile.jpg",
+        "title": "Seat profile",
+        "alt": "Angled view of a white and black jet ski seat with stitched details",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/boats/jet-ski/stitching-work.jpg",
+        "title": "Upholstery work",
+        "alt": "Jet ski seats on the workbench while an upholsterer works on the covers",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/boats/jet-ski/finishing-detail.jpg",
+        "title": "Finishing details",
+        "alt": "White jet ski seating and decorative panel stitching during workshop finishing",
+        "width": 900,
+        "height": 1600
+      }
+    ],
+    "videos": [
+      {
+        "src": "/our-work/boats/jet-ski/video-01.mp4",
+        "poster": "/our-work/boats/jet-ski/cover.jpg",
+        "title": "Jet Ski upholstery — video 1"
+      },
+      {
+        "src": "/our-work/boats/jet-ski/video-02.mp4",
+        "poster": "/our-work/boats/jet-ski/cover.jpg",
+        "title": "Jet Ski upholstery — video 2"
+      }
+    ]
+  },
+  {
+    "src": "/our-work/custom-seats/trailer-seats/cover.jpg",
+    "title": "Trailer Seats",
+    "alt": "Pair of red trailer seats with diamond-stitched backs, cushions, and matching armrests",
+    "width": 1600,
+    "height": 900,
+    "category": "Custom Seats",
+    "photos": [
+      {
+        "src": "/our-work/custom-seats/trailer-seats/cover.jpg",
+        "title": "Red trailer seat pair",
+        "alt": "Pair of red trailer seats with diamond-stitched backs, cushions, and matching armrests",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/our-work/custom-seats/trailer-seats/matched-seat-pair.jpg",
+        "title": "Matching red upholstery",
+        "alt": "Front view of the matching red trailer seat upholstery in the workshop",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/our-work/custom-seats/trailer-seats/seat-detail.jpg",
+        "title": "Seat and armrest detail",
+        "alt": "Red trailer seat with diamond stitching and upholstered armrests",
+        "width": 900,
+        "height": 1600
+      }
+    ]
+  },
+  {
+    "src": "/our-work/custom-seats/jeep-grand-cherokee/cover.jpg",
+    "title": "Jeep Grand Cherokee",
+    "alt": "Matching brown Jeep Grand Cherokee seat covers with horizontal stitched panels",
+    "width": 900,
+    "height": 1600,
+    "category": "Custom Seats",
+    "photos": [
+      {
+        "src": "/our-work/custom-seats/jeep-grand-cherokee/cover.jpg",
+        "title": "Matching Jeep seat upholstery",
+        "alt": "Matching brown Jeep Grand Cherokee seat covers with horizontal stitched panels",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/custom-seats/jeep-grand-cherokee/front-seat-detail.jpg",
+        "title": "Front seat detail",
+        "alt": "Brown Jeep Grand Cherokee seat upholstery with horizontal panels and matching headrest",
+        "width": 900,
+        "height": 1600
+      },
+      {
+        "src": "/our-work/custom-seats/jeep-grand-cherokee/matching-panels.jpg",
+        "title": "Coordinated upholstery panels",
+        "alt": "Brown Jeep Grand Cherokee seat upholstery panels arranged on the workshop bench",
+        "width": 900,
+        "height": 1600
+      }
+    ],
+    "videos": [
+      {
+        "src": "/our-work/custom-seats/jeep-grand-cherokee/video-01.mp4",
+        "poster": "/our-work/custom-seats/jeep-grand-cherokee/cover.jpg",
+        "title": "Jeep Grand Cherokee upholstery — video 1"
+      },
+      {
+        "src": "/our-work/custom-seats/jeep-grand-cherokee/video-02.mp4",
+        "poster": "/our-work/custom-seats/jeep-grand-cherokee/cover.jpg",
+        "title": "Jeep Grand Cherokee upholstery — video 2"
+      }
+    ]
+  },
 ];
 
 export function categorySlug(category: GalleryCategory) {
